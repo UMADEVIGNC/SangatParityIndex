@@ -35,7 +35,7 @@ Where:
 ## 3. Academic Citation
 
 ```bibtex
-@misc{sppi2026,
+@misc{spi2026,
   author = {Dr.K.Umadevi, Guru Nanak College},
   title = {Sangat  Parity Index (SPI): An Operational Metric for Institutional Gender Equity Inspired by Guru Nanak's Philosophy},
   year = {2026},
