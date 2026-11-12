@@ -19,17 +19,16 @@ Where:
 
 ---
 
-## 2. GitHub Pages Deployment (2-Step Setup)
+## 2. Interface Preview
 
-1. **Create Repository:** Create a new GitHub repository named `sppi-gender-parity`.
-2. **Push Files:** Commit `index.html` and `README.md` to the `main` branch.
-3. **Enable GitHub Pages:**
-   - Go to **Settings** &rarr; **Pages**.
-   - Under **Build and deployment**, select **Source: Deploy from a branch**.
-   - Select branch: `main` and folder: `/ (root)`.
-   - Click **Save**.
-4. Your interactive tool will be live at:
-   `https://<your-username>.github.io/sppi-gender-parity/`
+### SPI screen shot1
+![SPI screen shot1](./SPI%20screen%20shot1.png)
+
+### SPI screen shot2
+![SPI screen shot2](./SPI%20screen%20shot2.png)
+
+### SPI screen shot3
+![SPI screen shot3](./SPI%20screen%20shot3.png)
 
 ---
 
