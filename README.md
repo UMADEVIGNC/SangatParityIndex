@@ -1,10 +1,9 @@
 # Sangat Parity Index (SPI)
 [![Research Paper](https://img.shields.io/badge/Research%20Paper-Guru%20Shiksha%2011th%20Edition-1e3a8a?style=for-the-badge&logo=googlescholar&logoColor=white)](#)
-[![Live Interactive Tool](https://img.shields.io/badge/Live%20Interactive%20Tool-GitHub%20Pages-d97706?style=for-the-badge&logo=github&logoColor=white)](https://umadevignc.github.io/<your-repo-name>/)
+[![Live Interactive Tool](https://img.shields.io/badge/Live%20Interactive%20Tool-GitHub%20Pages-d97706?style=for-the-badge&logo=github&logoColor=white)](https://umadevignc.github.io/SangatParityIndex/)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
 
-> **🔗 Live Interactive Calculator:** [https://umadevignc.github.io/<your-repo-name>/]([https://umadevignc.github.io/SangatParityIndex/)](https://umadevignc.github.io/SangatParityIndex/)]([https://umadevignc.github.io/<your-repo-name>/](https://umadevignc.github.io/SangatParityIndex/))
-
+> **🔗 Live Interactive Calculator:** [https://umadevignc.github.io/SangatParityIndex/]([https://umadevignc.github.io/<your-repo-name>/](https://umadevignc.github.io/SangatParityIndex/))
 An open-source, interactive diagnostic research tool operationalizing 15th-century Sikh egalitarian philosophy into a quantitative metric for evaluating institutional gender parity.
 
 Developed for submission to the **Guru Shiksha (11th Edition) Competition**.
