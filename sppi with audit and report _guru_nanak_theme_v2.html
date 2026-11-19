@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ੴ Sangat-Pangat Parity Index | In the Light of Guru Nanak Dev Ji</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans+Gurmukhi:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --gold:#f5b942; --gold-2:#fbbf24; --amber:#d97706; --ember:#b45309;
+      --ink:#070b18; --ink-2:#0c1226; --panel:rgba(17,22,40,.72);
+      --line:rgba(245,185,66,.18); --line-2:rgba(148,163,184,.14);
+      --txt:#e8e6df; --dim:#9aa3b8;
+      --red:#f87171; --green:#34d399;
+    }
+    *{box-sizing:border-box; margin:0; padding:0}
+    body{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      color:var(--txt);
+      min-height:100vh;
+      background:
+        radial-gradient(1100px 600px at 85% -10%, rgba(217,119,6,.14), transparent 60%),
+        radial-gradient(900px 700px at -10% 30%, rgba(30,58,138,.22), transparent 60%),
+        radial-gradient(1000px 800px at 50% 110%, rgba(180,83,9,.10), transparent 60%),
+        linear-gradient(180deg,#070b18 0%, #0a0f20 45%, #0d0910 100%);
+      overflow-x:hidden;
+    }
+    .hidden{display:none !important}
+    .stars{position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5}
+    .stars i{position:absolute; width:2px; height:2px; border-radius:50%; background:#f5b942;
+      animation:twinkle var(--d,4s) ease-in-out infinite}
+    @keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.9}}
+
+    .font-serif{font-family:'Cinzel',serif}
+    .gurmukhi{font-family:'Noto Sans Gurmukhi',sans-serif}
+    .quote-font{font-family:'Cormorant Garamond',serif}
+
+    .ik-onkar{
+      position:absolute; right:-40px; top:-60px;
+      font-family:'Noto Sans Gurmukhi',serif;
+      font-size:26rem; line-height:1; color:rgba(245,185,66,.05);
+      text-shadow:0 0 120px rgba(245,185,66,.25);
+      animation:breathe 6s ease-in-out infinite; user-select:none; pointer-events:none;
+    }
+    @keyframes breathe{0%,100%{opacity:.6; text-shadow:0 0 90px rgba(245,185,66,.18)}50%{opacity:1; text-shadow:0 0 150px rgba(245,185,66,.38)}}
+
+    .wrap{position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:0 22px}
+
+    /* ── header ── */
+    header{position:sticky; top:0; z-index:50; background:rgba(7,11,24,.78); backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line)}
+    .hrow{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 0; flex-wrap:wrap}
+    .brand{display:flex; align-items:center; gap:12px}
+    .emblem{width:46px; height:46px; border-radius:50%; display:grid; place-items:center;
+      background:radial-gradient(circle at 30% 30%, #fde68a, #d97706 60%, #7c2d12);
+      box-shadow:0 0 24px rgba(245,185,66,.5), inset 0 0 8px rgba(255,255,255,.4);
+      font-size:24px; color:#3b1405}
+    .brand h1{font-size:1.05rem; letter-spacing:.04em}
+    .brand p{font-size:.66rem; color:var(--dim); letter-spacing:.08em; text-transform:uppercase}
+    .presets{display:flex; gap:8px; flex-wrap:wrap}
+    .preset{padding:8px 14px; border-radius:999px; font-size:.7rem; font-weight:600;
+      border:1px solid var(--line-2); background:rgba(255,255,255,.03); color:var(--dim);
+      cursor:pointer; transition:.25s}
+    .preset:hover{border-color:var(--gold); color:var(--gold); box-shadow:0 0 16px rgba(245,185,66,.2)}
+    .preset.active{border-color:var(--gold); color:#1a1005; background:linear-gradient(135deg,#fbbf24,#d97706);
+      box-shadow:0 0 22px rgba(245,185,66,.4)}
+    .preset-red{border-color:rgba(248,113,113,.4) !important; color:#fca5a5 !important}
+    .preset-red:hover{border-color:var(--red) !important; color:var(--red) !important; box-shadow:0 0 16px rgba(248,113,113,.2)}
+    .preset-red.active{border-color:var(--red) !important; color:#fff !important;
+      background:linear-gradient(135deg,#ef4444,#7f1d1d) !important; box-shadow:0 0 22px rgba(239,68,68,.4) !important}
+    .preset.pulse{animation:pulse .5s ease}
+    @keyframes pulse{50%{transform:scale(1.08)}}
+
+    /* ── hero ── */
+    .hero{position:relative; overflow:hidden; margin-top:26px; border-radius:26px;
+      border:1px solid var(--line);
+      background:linear-gradient(135deg, rgba(23,28,52,.85), rgba(28,18,8,.75));
+      box-shadow:0 30px 80px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06)}
+    .hero-flex{position:relative; padding:44px 42px; display:flex; gap:30px; flex-wrap:wrap; justify-content:space-between; align-items:flex-start}
+    .hero-main{max-width:640px}
+    .kicker{display:inline-flex; align-items:center; gap:8px; font-size:.64rem; font-weight:700;
+      letter-spacing:.22em; text-transform:uppercase; color:var(--gold);
+      border:1px solid var(--line); border-radius:999px; padding:6px 14px; background:rgba(245,185,66,.06)}
+    .kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:twinkle 2.4s infinite}
+    .hero h2{font-size:clamp(1.6rem,3.2vw,2.4rem); line-height:1.15; margin:18px 0 14px; color:#fff; letter-spacing:.01em}
+    .hero h2 em{font-style:normal; background:linear-gradient(100deg,#fde68a,#f5b942 45%,#d97706);
+      -webkit-background-clip:text; background-clip:text; color:transparent}
+    .hero p{color:#c7cbdb; font-size:.9rem; line-height:1.75; max-width:60ch}
+    .formula{display:inline-block; margin-top:18px; padding:12px 20px; border-radius:14px;
+      font-family:ui-monospace,Menlo,monospace; font-size:.85rem; color:#ffd98a;
+      border:1px solid var(--line); background:rgba(7,11,24,.7);
+      box-shadow:inset 0 0 24px rgba(245,185,66,.06)}
+    .shabad{margin-top:22px; padding:18px 22px; border-left:3px solid var(--gold); border-radius:0 16px 16px 0;
+      background:rgba(245,185,66,.05)}
+    .shabad .gurmukhi{font-size:1.2rem; color:#ffdf9e; line-height:1.7}
+    .shabad .trans{font-size:.78rem; color:var(--dim); font-style:italic; margin-top:6px}
+    .shabad .cite{font-size:.64rem; color:var(--amber); letter-spacing:.12em; text-transform:uppercase; margin-top:8px}
+
+    /* mode toggle card */
+    .mode-card{width:100%; max-width:300px; background:rgba(7,11,24,.8); border:1px solid var(--line);
+      border-radius:18px; padding:20px; box-shadow:0 16px 40px rgba(0,0,0,.4)}
+    .mode-card>span.lbl{font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--dim); font-weight:700; display:block; margin-bottom:10px}
+    .mode-btn{width:100%; padding:12px; border-radius:12px; font-size:.76rem; font-weight:700; margin-bottom:8px;
+      border:1px solid var(--line-2); background:rgba(255,255,255,.03); color:var(--dim); cursor:pointer; transition:.25s;
+      display:flex; align-items:center; justify-content:center; gap:8px}
+    .mode-btn:hover{border-color:var(--gold); color:var(--gold)}
+    .mode-btn.active{border-color:var(--gold); color:#1a1005; background:linear-gradient(135deg,#fbbf24,#d97706);
+      box-shadow:0 0 20px rgba(245,185,66,.35)}
+    .sector-box{border-top:1px solid var(--line-2); padding-top:14px; margin-top:6px}
+    .sector-box label{font-size:.68rem; color:var(--gold); font-weight:600; display:block; margin-bottom:8px}
+
+    /* ── shared controls ── */
+    select.gold-select{
+      width:100%; background:#0c1226; border:1px solid rgba(148,163,184,.25); color:#ffd98a;
+      font-family:'Plus Jakarta Sans',sans-serif; font-size:.74rem; padding:10px 12px; border-radius:11px;
+      cursor:pointer; transition:.2s; outline:none}
+    select.gold-select:focus{border-color:var(--gold); box-shadow:0 0 14px rgba(245,185,66,.25)}
+    select.gold-select option{background:#0c1226; color:#e8e6df}
+
+    /* ── layout ── */
+    .grid{display:grid; grid-template-columns:1fr; gap:26px; margin-top:30px}
+    @media(min-width:1024px){.grid{grid-template-columns:7fr 5fr}}
+    .dims{display:flex; flex-direction:column; gap:22px}
+    .card{border:1px solid var(--line-2); border-radius:20px; padding:24px; background:var(--panel);
+      backdrop-filter:blur(8px); box-shadow:0 16px 44px rgba(0,0,0,.35);
+      transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease}
+    .card:hover{transform:translateY(-3px); border-color:var(--line);
+      box-shadow:0 22px 60px rgba(0,0,0,.5), 0 0 30px rgba(245,185,66,.07)}
+    .dim-head{display:flex; align-items:center; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line-2)}
+    .dim-icon{width:42px; height:42px; border-radius:12px; display:grid; place-items:center; flex-shrink:0;
+      background:linear-gradient(135deg, rgba(245,185,66,.2), rgba(217,119,6,.08));
+      border:1px solid var(--line); color:var(--gold)}
+    .dim-head .num{font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--amber); font-weight:700}
+    .dim-head h3{font-size:1rem; color:#fff; margin-top:2px}
+    .dim-head .chip{margin-left:auto; font-family:ui-monospace,monospace; font-weight:700; font-size:.85rem;
+      color:var(--gold); background:rgba(7,11,24,.8); border:1px solid var(--line); padding:5px 12px; border-radius:10px}
+    .dim-note{font-size:.74rem; color:var(--dim); line-height:1.6; margin:12px 0 4px}
+    .dim-note em{color:#d8c08a; font-style:normal; font-weight:600}
+
+    /* ── graphical sliders ── */
+    .slider-block{margin-top:20px}
+    .slider-label{display:flex; justify-content:space-between; align-items:baseline; gap:10px}
+    .slider-label label{font-size:.8rem; font-weight:600; color:#dbe0ec}
+    .slider-track-wrap{position:relative; margin-top:12px; padding:0 2px}
+    .slider-val{position:absolute; top:-30px; transform:translateX(-50%);
+      font-family:ui-monospace,monospace; font-size:.72rem; font-weight:700; color:#1a1005;
+      background:linear-gradient(135deg,#fde68a,#f5b942); padding:3px 9px; border-radius:8px;
+      box-shadow:0 4px 14px rgba(245,185,66,.4); pointer-events:none; white-space:nowrap; transition:left .05s linear}
+    .slider-val::after{content:''; position:absolute; left:50%; bottom:-4px; transform:translateX(-50%);
+      border:5px solid transparent; border-top-color:#f5b942; border-bottom:0}
+    input[type=range]{-webkit-appearance:none; appearance:none; width:100%; height:10px; border-radius:999px;
+      background:#1a2138; outline:none; cursor:pointer; box-shadow:inset 0 1px 4px rgba(0,0,0,.6); transition:box-shadow .25s}
+    input[type=range]:hover{box-shadow:inset 0 1px 4px rgba(0,0,0,.6), 0 0 18px rgba(245,185,66,.25)}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none; width:26px; height:26px; border-radius:50%;
+      background:radial-gradient(circle at 32% 30%, #fff7dd, #f5b942 45%, #b45309);
+      border:3px solid #0c1226; box-shadow:0 0 0 2px rgba(245,185,66,.55), 0 0 18px rgba(245,185,66,.75);
+      cursor:grab; transition:transform .15s}
+    input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
+    input[type=range]:active::-webkit-slider-thumb{cursor:grabbing; transform:scale(1.2)}
+    input[type=range]::-moz-range-thumb{width:24px; height:24px; border-radius:50%;
+      background:radial-gradient(circle at 32% 30%, #fff7dd, #f5b942 45%, #b45309);
+      border:3px solid #0c1226; box-shadow:0 0 0 2px rgba(245,185,66,.55), 0 0 18px rgba(245,185,66,.75); cursor:grab}
+    .ticks{height:6px; margin:6px 4px 0;
+      background:repeating-linear-gradient(90deg, rgba(245,185,66,.28) 0 1.5px, transparent 1.5px 10%);
+      border-radius:2px; opacity:.6}
+    .slider-hint{font-size:.66rem; color:#6b7490; margin-top:8px; line-height:1.5}
+
+    /* ── quiz (audit questionnaire) ── */
+    .quiz-banner{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+      border:1px solid var(--line); border-radius:16px; padding:16px 20px;
+      background:linear-gradient(135deg, rgba(245,185,66,.08), rgba(217,119,6,.03))}
+    .quiz-banner h3{font-size:.92rem; color:#ffe9b8}
+    .quiz-banner p{font-size:.72rem; color:var(--dim); margin-top:4px; line-height:1.55}
+    .quiz-banner p strong{color:#d8c08a}
+    .btn-sm{padding:9px 16px; border-radius:10px; font-size:.7rem; font-weight:700; cursor:pointer; transition:.2s;
+      border:1px solid var(--line-2); background:rgba(255,255,255,.03); color:var(--dim)}
+    .btn-sm:hover{border-color:var(--gold); color:var(--gold)}
+    .quiz-group .q-card{background:rgba(7,11,24,.6); border:1px solid rgba(148,163,184,.12); border-radius:13px;
+      padding:15px 17px; margin-top:14px; transition:border-color .25s}
+    .quiz-group .q-card:hover{border-color:rgba(245,185,66,.35)}
+    .quiz-group .q-card .qnum{color:var(--gold); font-weight:700; margin-right:6px}
+    .quiz-group .q-card p{font-size:.78rem; color:#dbe0ec; line-height:1.6}
+    .quiz-group .q-foot{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:10px; flex-wrap:wrap}
+    .quiz-group .q-ev{font-size:.64rem; color:#6b7490}
+    .quiz-select{font-family:ui-monospace,monospace; font-size:.72rem; padding:8px 10px; border-radius:10px;
+      background:#0c1226; border:1px solid rgba(148,163,184,.25); color:#ffd98a; cursor:pointer; outline:none; transition:.2s}
+    .quiz-select:focus{border-color:var(--gold); box-shadow:0 0 12px rgba(245,185,66,.25)}
+    .quiz-select option{background:#0c1226; color:#e8e6df}
+    .avg-badge{font-family:ui-monospace,monospace; font-weight:700; font-size:.78rem; color:var(--gold);
+      background:rgba(7,11,24,.8); border:1px solid var(--line); padding:5px 12px; border-radius:10px}
+
+    /* ── gauge panel ── */
+    @media(min-width:1024px){.score-panel{position:sticky; top:96px}}
+    .score-panel{border-color:var(--line);
+      background:linear-gradient(180deg, rgba(24,22,14,.85), rgba(10,13,26,.9));
+      box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 60px rgba(245,185,66,.06)}
+    .gauge-box{position:relative; width:250px; margin:6px auto 0}
+    .gauge-box svg{display:block; width:100%}
+    .gauge-center{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center}
+    .gauge-score{font-family:'Cinzel',serif; font-size:3rem; font-weight:800; line-height:1;
+      background:linear-gradient(180deg,#fff3cf,#f5b942); -webkit-background-clip:text; background-clip:text; color:transparent;
+      filter:drop-shadow(0 0 18px rgba(245,185,66,.45))}
+    .gauge-sub{font-size:.6rem; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); margin-top:6px}
+    .ring-bg{fill:none; stroke:#1c2440; stroke-width:14}
+    .ring-prog{fill:none; stroke:url(#goldGrad); stroke-width:14; stroke-linecap:round;
+      stroke-dasharray:100; stroke-dashoffset:100; transform:rotate(-90deg); transform-origin:center;
+      transition:stroke-dashoffset .7s cubic-bezier(.22,1,.36,1);
+      filter:drop-shadow(0 0 10px rgba(245,185,66,.6))}
+    .ring-inner{fill:none; stroke:rgba(245,185,66,.12); stroke-width:1.5; stroke-dasharray:2 6}
+    .tier-badge{display:block; text-align:center; margin:14px auto 0; width:fit-content;
+      padding:7px 18px; border-radius:999px; font-size:.72rem; font-weight:700; letter-spacing:.06em;
+      border:1px solid var(--line); background:rgba(245,185,66,.07); color:var(--gold); transition:.4s}
+    .tier-badge.t1{border-color:rgba(248,113,113,.5); background:rgba(248,113,113,.08); color:var(--red)}
+    .tier-badge.t2{border-color:rgba(245,185,66,.5); background:rgba(245,185,66,.08); color:var(--gold)}
+    .tier-badge.t3{border-color:rgba(52,211,153,.5); background:rgba(52,211,153,.08); color:var(--green)}
+
+    .bars{margin-top:22px; display:flex; flex-direction:column; gap:14px; border-top:1px solid var(--line-2); padding-top:20px}
+    .bar-row{font-size:.72rem}
+    .bar-row .bl{display:flex; justify-content:space-between; color:var(--dim); margin-bottom:6px}
+    .bar-row .bl b{color:#e6e2d4; font-weight:600}
+    .bar-track{height:8px; border-radius:99px; background:#161d33; overflow:hidden; box-shadow:inset 0 1px 3px rgba(0,0,0,.5)}
+    .bar-fill{height:100%; border-radius:99px; width:0%;
+      background:linear-gradient(90deg,#b45309,#f5b942,#fde68a);
+      box-shadow:0 0 12px rgba(245,185,66,.5);
+      transition:width .6s cubic-bezier(.22,1,.36,1)}
+
+    .minis{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:18px; border-top:1px solid var(--line-2); padding-top:16px}
+    .mini{background:rgba(7,11,24,.7); border:1px solid rgba(148,163,184,.12); border-radius:11px; padding:9px 6px; text-align:center}
+    .mini span{display:block; font-size:.6rem; color:var(--dim); letter-spacing:.06em}
+    .mini b{font-family:ui-monospace,monospace; font-size:.72rem; color:var(--gold); font-weight:700}
+
+    .tier-desc{margin-top:18px; padding:14px 16px; font-size:.76rem; line-height:1.65; color:#c7cbdb;
+      background:rgba(7,11,24,.6); border:1px solid var(--line-2); border-radius:14px; min-height:64px}
+    .btn-row{margin-top:16px; display:flex; flex-direction:column; gap:10px}
+    .btn{padding:13px 16px; border-radius:13px; font-size:.78rem; font-weight:700; letter-spacing:.04em;
+      cursor:pointer; transition:.25s; border:1px solid transparent;
+      display:flex; align-items:center; justify-content:center; gap:8px}
+    .btn-gold{background:linear-gradient(135deg,#fbbf24,#d97706); color:#221302; box-shadow:0 8px 24px rgba(217,119,6,.35)}
+    .btn-gold:hover{box-shadow:0 10px 32px rgba(245,185,66,.5); transform:translateY(-1px)}
+    .btn-goldlight{background:linear-gradient(135deg,#fde68a,#f5b942); color:#221302}
+    .btn-goldlight:hover{box-shadow:0 8px 26px rgba(245,185,66,.45); transform:translateY(-1px)}
+    .btn-ghost{border-color:var(--line-2); color:var(--dim); background:transparent}
+    .btn-ghost:hover{border-color:var(--gold); color:var(--gold)}
+    .toast{text-align:center; font-size:.7rem; font-weight:700; color:var(--gold); height:16px; opacity:0; transition:opacity .3s; margin-top:8px}
+
+    .gurbani-card{border-color:var(--line); background:linear-gradient(160deg, rgba(38,26,8,.7), rgba(12,15,30,.85)); text-align:center}
+    .gurbani-card .gurmukhi{font-size:1.1rem; color:#ffe3a3; line-height:1.9}
+    .gurbani-card .src{font-size:.62rem; color:var(--amber); letter-spacing:.14em; text-transform:uppercase; margin-top:8px}
+    .gurbani-card p.explain{font-size:.7rem; color:var(--dim); line-height:1.6; margin-top:10px}
+
+    /* ── legacy ── */
+    .legacy{margin-top:56px}
+    .sec-head{text-align:center; margin-bottom:26px}
+    .sec-head .rule{width:64px; height:2px; margin:14px auto 0;
+      background:linear-gradient(90deg, transparent, var(--gold), transparent)}
+    .sec-head h3{font-family:'Cinzel',serif; font-size:1.5rem; color:#fff; letter-spacing:.03em}
+    .sec-head p{font-size:.76rem; color:var(--dim); margin-top:8px}
+    .legacy-grid{display:grid; grid-template-columns:1fr; gap:18px}
+    @media(min-width:760px){.legacy-grid{grid-template-columns:repeat(3,1fr)}}
+    .legacy-card{position:relative; overflow:hidden; text-align:left}
+    .legacy-card::before{content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg, transparent, var(--gold), transparent); opacity:.7}
+    .legacy-card h4{font-family:'Cinzel',serif; color:#ffe9b8; font-size:.95rem; margin:14px 0 8px; letter-spacing:.05em}
+    .legacy-card p{font-size:.74rem; color:#aeb6ca; line-height:1.7}
+    .legacy-card .yr{display:inline-block; margin-top:14px; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase;
+      color:var(--amber); border:1px solid var(--line); border-radius:99px; padding:4px 10px}
+    .legacy-card .big{position:absolute; right:-8px; bottom:-26px; font-family:'Cinzel',serif; font-size:5.5rem; font-weight:800;
+      color:rgba(245,185,66,.05); pointer-events:none}
+
+    /* ── rubric ── */
+    .rubric{margin-top:56px}
+    .rubric table{width:100%; border-collapse:collapse; font-size:.76rem; border:1px solid var(--line-2); border-radius:16px; overflow:hidden; display:block; overflow-x:auto}
+    .rubric thead th{background:rgba(245,185,66,.06); color:#ffe9b8; text-transform:uppercase; letter-spacing:.1em; font-size:.62rem;
+      padding:14px 16px; text-align:left; border-bottom:1px solid var(--line)}
+    .rubric tbody td{padding:14px 16px; color:#b9c0d2; line-height:1.6; border-bottom:1px solid rgba(148,163,184,.08); vertical-align:top; min-width:150px}
+    .rubric tbody tr:last-child td{border-bottom:0}
+    .rubric tbody tr{transition:background .2s}
+    .rubric tbody tr:hover{background:rgba(245,185,66,.03)}
+    .rubric td.tname{color:#fff; font-weight:700; white-space:nowrap}
+    .rubric td.tier1{color:var(--red); font-weight:700; font-family:ui-monospace,monospace; white-space:nowrap}
+    .rubric td.tier2{color:var(--gold); font-weight:700; font-family:ui-monospace,monospace; white-space:nowrap}
+    .rubric td.tier3{color:var(--green); font-weight:700; font-family:ui-monospace,monospace; white-space:nowrap}
+
+    footer{margin-top:64px; border-top:1px solid var(--line-2); padding:30px 0 40px; text-align:center; position:relative; z-index:1}
+    footer .gurmukhi{color:var(--gold); font-size:1.05rem}
+    footer p{font-size:.7rem; color:var(--dim); margin-top:8px; line-height:1.7}
+  </style>
+</head>
+<style>
+    /* ── full report modal ── */
+    .modal-overlay{position:fixed; inset:0; z-index:100; background:rgba(4,6,14,.88); backdrop-filter:blur(10px);
+      display:none; align-items:flex-start; justify-content:center; overflow-y:auto; padding:36px 16px 60px}
+    .modal-overlay.open{display:flex; animation:fadeIn .3s ease}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .report{max-width:840px; width:100%; background:#fbf6ea; color:#221a10; border-radius:18px;
+      padding:48px 52px 40px; position:relative; box-shadow:0 40px 120px rgba(0,0,0,.65), 0 0 0 1px rgba(180,83,9,.25);
+      animation:slideUp .35s cubic-bezier(.22,1,.36,1)}
+    @keyframes slideUp{from{transform:translateY(24px); opacity:0}to{transform:none; opacity:1}}
+    .report::before{content:''; position:absolute; top:0; left:0; right:0; height:5px; border-radius:18px 18px 0 0;
+      background:linear-gradient(90deg,#7c2d12,#d97706,#f5b942,#d97706,#7c2d12)}
+    .r-close{position:absolute; top:16px; right:18px; width:34px; height:34px; border-radius:50%; border:1px solid rgba(180,83,9,.35);
+      background:#fff; color:#7c2d12; font-size:1rem; cursor:pointer; transition:.2s; line-height:1}
+    .r-close:hover{background:#7c2d12; color:#fff}
+    .r-ikon{text-align:center; font-family:'Noto Sans Gurmukhi',serif; font-size:2.6rem; color:#b45309;
+      text-shadow:0 0 24px rgba(245,185,66,.5)}
+    .report h2{text-align:center; font-family:'Cinzel',serif; font-size:1.4rem; color:#431407; margin-top:6px; letter-spacing:.03em}
+    .r-meta{text-align:center; font-size:.68rem; color:#8a6a3c; letter-spacing:.1em; text-transform:uppercase; margin-top:8px; line-height:1.8}
+    .r-rule{height:2px; margin:22px 0; background:linear-gradient(90deg,transparent,#d97706,transparent)}
+    .report h3{font-family:'Cinzel',serif; font-size:.9rem; color:#7c2d12; letter-spacing:.1em; text-transform:uppercase;
+      margin:26px 0 12px; display:flex; align-items:center; gap:10px}
+    .report h3::after{content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(180,83,9,.4),transparent)}
+    .r-exec{display:flex; align-items:center; gap:22px; background:#fff; border:1px solid rgba(180,83,9,.25);
+      border-radius:14px; padding:18px 22px; box-shadow:0 6px 18px rgba(120,60,10,.08); flex-wrap:wrap}
+    .r-big{font-family:'Cinzel',serif; font-size:2.8rem; font-weight:800; line-height:1;
+      background:linear-gradient(180deg,#d97706,#92400e); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .r-tierpill{display:inline-block; margin-top:6px; padding:5px 14px; border-radius:999px; font-size:.66rem; font-weight:700; letter-spacing:.05em}
+    .r-tierpill.t1{background:#fee2e2; color:#991b1b; border:1px solid #fca5a5}
+    .r-tierpill.t2{background:#fef3c7; color:#92400e; border:1px solid #fcd34d}
+    .r-tierpill.t3{background:#d1fae5; color:#065f46; border:1px solid #6ee7b7}
+    .r-exec p{font-size:.78rem; color:#5b4a32; line-height:1.65; flex:1; min-width:220px}
+    .r-table{width:100%; border-collapse:collapse; font-size:.74rem; background:#fff; border-radius:12px; overflow:hidden;
+      box-shadow:0 4px 14px rgba(120,60,10,.07); margin-bottom:10px}
+    .r-table th{background:#fdf3dd; color:#7c2d12; text-transform:uppercase; letter-spacing:.08em; font-size:.6rem;
+      padding:9px 13px; text-align:left; border-bottom:1px solid rgba(180,83,9,.25)}
+    .r-table td{padding:9px 13px; border-bottom:1px solid rgba(180,83,9,.1); color:#3f3222; line-height:1.5; vertical-align:top}
+    .r-table tr:last-child td{border-bottom:0}
+    .r-table .mono{font-family:ui-monospace,monospace; font-weight:700; color:#92400e; white-space:nowrap}
+    .r-bar{height:7px; border-radius:99px; background:#f1e3c8; overflow:hidden; min-width:100px}
+    .r-bar i{display:block; height:100%; border-radius:99px; background:linear-gradient(90deg,#b45309,#f5b942)}
+    .r-callout{border-left:4px solid #d97706; background:#fffbeb; border-radius:0 12px 12px 0; padding:14px 18px;
+      font-size:.78rem; line-height:1.7; color:#4a3820}
+    .r-callout b{color:#7c2d12}
+    .r-shabad{text-align:center; background:linear-gradient(160deg,#fff7e6,#fdeeda); border:1px solid rgba(180,83,9,.2);
+      border-radius:14px; padding:18px}
+    .r-shabad .gurmukhi{font-size:1.05rem; color:#92400e; line-height:1.9}
+    .r-shabad .trans{font-size:.72rem; font-style:italic; color:#6b5535; margin-top:6px}
+    .r-shabad .cite{font-size:.6rem; color:#b45309; letter-spacing:.12em; text-transform:uppercase; margin-top:6px}
+    .r-formula{text-align:center; font-family:ui-monospace,monospace; font-size:.78rem; color:#92400e;
+      background:#fff; border:1px dashed rgba(180,83,9,.4); border-radius:10px; padding:10px; margin-top:10px}
+    .r-actions{display:flex; gap:10px; margin-top:26px; flex-wrap:wrap}
+    .r-btn{flex:1; min-width:150px; padding:12px; border-radius:12px; font-size:.76rem; font-weight:700; cursor:pointer;
+      transition:.2s; border:1px solid transparent; display:flex; align-items:center; justify-content:center; gap:7px}
+    .r-btn-gold{background:linear-gradient(135deg,#fbbf24,#d97706); color:#221302}
+    .r-btn-gold:hover{box-shadow:0 8px 22px rgba(217,119,6,.4)}
+    .r-btn-ghost{border-color:rgba(180,83,9,.35); color:#7c2d12; background:#fff}
+    .r-btn-ghost:hover{border-color:#b45309}
+    .r-foot{margin-top:26px; text-align:center; font-size:.64rem; color:#8a6a3c; line-height:1.8}
+    @media print{
+      body>*:not(.modal-overlay){display:none !important}
+      .modal-overlay{position:static; background:none; padding:0; display:block}
+      .report{box-shadow:none; max-width:100%; border-radius:0; animation:none}
+      .no-print{display:none !important}
+    }
+  </style>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<header>
+  <div class="wrap hrow">
+    <div class="brand">
+      <div class="emblem gurmukhi">ੴ</div>
+      <div>
+        <h1 class="font-serif">Sangat-Pangat Parity Index</h1>
+        <p>Guru Shiksha 11th Edition &bull; Dual-Mode Diagnostic Metric</p>
+      </div>
+    </div>
+    <div class="presets">
+      <button class="preset preset-red" data-p="patriarchal" onclick="applyPreset('patriarchal')">Patriarchal (Tier I)</button>
+      <button class="preset" data-p="corporate" onclick="applyPreset('corporate')">Corporate</button>
+      <button class="preset" data-p="academic" onclick="applyPreset('academic')">Academic Org</button>
+      <button class="preset active" data-p="sangat" onclick="applyPreset('sangat')">Sangat Ideal</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- Hero with mode switcher -->
+  <section class="hero">
+    <div class="ik-onkar gurmukhi">ੴ</div>
+    <div class="hero-flex">
+      <div class="hero-main">
+        <span class="kicker"><span class="dot"></span> In the Light of Guru Nanak Dev Ji &bull; 1469–1539</span>
+        <h2>Measuring Institutional Equity Through the <em>Egalitarian Vision</em> of the First Guru</h2>
+        <p>Evaluate institutional equity by adjusting the <strong>six sub-indicator sliders</strong> directly, or run the <strong>18-question institutional audit</strong> for Educational Institutions or Organizations. Both modes feed the same composite metric rooted in <em>Sangat</em>, <em>Pangat</em>, and <em>Kirat-Vand</em>.</p>
+        <div class="formula">SPPI = ⅓ &middot; S<sub>gov</sub> + ⅓ &middot; P<sub>dist</sub> + ⅓ &middot; K<sub>econ</sub></div>
+        <div class="shabad">
+          <div class="gurmukhi">ਸੋ ਕਿਉਂ ਮੰਦਾ ਆਖੀਐ ਜਿਤੁ ਜੰਮਹਿ ਰਾਜਾਨ ॥</div>
+          <div class="trans quote-font">"So kyon manda aakhee-ai, jit jammeh raajaan" — Why call her inferior, from whom kings are born?</div>
+          <div class="cite">Sri Guru Granth Sahib Ji &bull; Ang 473 &bull; Guru Nanak Dev Ji</div>
+        </div>
+      </div>
+
+      <div class="mode-card">
+        <span class="lbl">Evaluation Mode</span>
+        <button id="btn-mode-slider" class="mode-btn active" onclick="setMode('slider')">🎚 Direct Sliders</button>
+        <button id="btn-mode-quiz" class="mode-btn" onclick="setMode('quiz')">📋 Audit Questionnaire</button>
+        <div id="sector-selector-box" class="sector-box hidden">
+          <label for="sector-select">Institution Type</label>
+          <select id="sector-select" class="gold-select" onchange="renderQuiz()">
+            <option value="edu">Educational Institution (College / University)</option>
+            <option value="org">Organization (Corporate / NGO / Public Body)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Grid -->
+  <div class="grid">
+
+    <!-- Left column -->
+    <div class="dims">
+
+      <!-- MODE A: sliders -->
+      <section id="panel-sliders" class="dims">
+        <div class="card">
+          <div class="dim-head">
+            <div class="dim-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><circle cx="5" cy="16" r="3.2"/><circle cx="19" cy="16" r="3.2"/><path d="M9 10.5 6.5 13.5M15 10.5l2.5 3M8 16h8"/></svg></div>
+            <div>
+              <div class="num">Dimension 1 &bull; ਸੰਗਤ</div>
+              <h3>Sangat Governance Parity (S<sub>gov</sub>)</h3>
+            </div>
+            <span class="chip" id="score-sgov">0.60</span>
+          </div>
+          <p class="dim-note">The <em>Sangat</em> — Guru Nanak's assembly where every voice sat as an equal deliberator. Co-equal voice and leadership authority.</p>
+          <div class="slider-block">
+            <div class="slider-label"><label for="slider-vd">Deliberative Voice &amp; Consensus Rights (V<sub>d</sub>)</label></div>
+            <div class="slider-track-wrap">
+              <span class="slider-val" id="val-vd">0.60</span>
+              <input id="slider-vd" type="range" min="0" max="1" step="0.01" value="0.60" oninput="calculateSPPI()">
+              <div class="ticks"></div>
+            </div>
+            <p class="slider-hint">Protection of minority dissent and veto parity in decision assemblies.</p>
+          </div>
+          <div class="slider-block">
+            <div class="slider-label"><label for="slider-lp">Governing Board &amp; Strategic Representation (L<sub>p</sub>)</label></div>
+            <div class="slider-track-wrap">
+              <span class="slider-val" id="val-lp">0.60</span>
+              <input id="slider-lp" type="range" min="0" max="1" step="0.01" value="0.60" oninput="calculateSPPI()">
+              <div class="ticks"></div>
+            </div>
+            <p class="slider-hint">Female proportion in trustee, director, and senior leadership levels.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="dim-head">
+            <div class="dim-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M4 12c2.5-2 5.5-2 8 0s5.5 2 8 0M12 4v16"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <div>
+              <div class="num">Dimension 2 &bull; ਪੰਗਤ</div>
+              <h3>Pangat Distributive Equity (P<sub>dist</sub>)</h3>
+            </div>
+            <span class="chip" id="score-pdist">0.55</span>
+          </div>
+          <p class="dim-note">The <em>Pangat</em> — the equal row of the Langar, dissolving caste and ritual taboo (<em>Sutak</em>). Access to shared resources and bodily dignity.</p>
+          <div class="slider-block">
+            <div class="slider-label"><label for="slider-ca">Commons &amp; STEM Infrastructure Access (C<sub>a</sub>)</label></div>
+            <div class="slider-track-wrap">
+              <span class="slider-val" id="val-ca">0.55</span>
+              <input id="slider-ca" type="range" min="0" max="1" step="0.01" value="0.55" oninput="calculateSPPI()">
+              <div class="ticks"></div>
+            </div>
+            <p class="slider-hint">Equitable hardware, labs, compute credits, and algorithm design pipelines.</p>
+          </div>
+          <div class="slider-block">
+            <div class="slider-label"><label for="slider-wb">Bodily Equity &amp; Sutak De-stigmatization (W<sub>b</sub>)</label></div>
+            <div class="slider-track-wrap">
+              <span class="slider-val" id="val-wb">0.55</span>
+              <input id="slider-wb" type="range" min="0" max="1" step="0.01" value="0.55" oninput="calculateSPPI()">
+              <div class="ticks"></div>
+            </div>
+            <p class="slider-hint">Menstrual sanitation amenities, reproductive safety, and anti-harassment enforcement.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="dim-head">
+            <div class="dim-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M12 7c-2.5-1.5-5-1.5-7 0M12 7c2.5-1.5 5-1.5 7 0M5 21h14"/><path d="M9 12.5c1 1 2 1.5 3 1.5s2-.5 3-1.5"/></svg></div>
+            <div>
+              <div class="num">Dimension 3 &bull; ਕਿਰਤ</div>
+              <h3>Kirat-Vand Economic Autonomy (K<sub>econ</sub>)</h3>
+            </div>
+            <span class="chip" id="score-kecon">0.50</span>
+          </div>
+          <p class="dim-note"><em>Kirat Karo</em> — honest dignified labor — and <em>Vand Chhako</em> — sharing earnings. Capital ownership and valuing of care work.</p>
+          <div class="slider-block">
+            <div class="slider-label"><label for="slider-ap">Asset Entitlement &amp; Capital Parity (A<sub>p</sub>)</label></div>
+            <div class="slider-track-wrap">
+              <span class="slider-val" id="val-ap">0.50</span>
+              <input id="slider-ap" type="range" min="0" max="1" step="0.01" value="0.50" oninput="calculateSPPI()">
+              <div class="ticks"></div>
+            </div>
+            <p class="slider-hint">Direct equity ownership, patent holding, and transparent compensation parity.</p>
+          </div>
+          <div class="slider-block">
+            <div class="slider-label"><label for="slider-uc">Unpaid Care Labor Valuation (U<sub>c</sub>)</label></div>
+            <div class="slider-track-wrap">
+              <span class="slider-val" id="val-uc">0.50</span>
+              <input id="slider-uc" type="range" min="0" max="1" step="0.01" value="0.50" oninput="calculateSPPI()">
+              <div class="ticks"></div>
+            </div>
+            <p class="slider-hint">Formal accommodation for domestic stewardship and parental leave credits.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODE B: questionnaire -->
+      <section id="panel-quiz" class="hidden dims">
+        <div class="quiz-banner">
+          <div>
+            <h3>18-Point Institutional Audit Questionnaire</h3>
+            <p>Rate each question from <strong>0.00 (Absent / Excluded)</strong> to <strong>1.00 (Sangat Equilibrium)</strong>. Sub-indicator scores update live and feed the same SPPI composite.</p>
+          </div>
+          <button class="btn-sm" onclick="resetQuizScores(0.50)">↺ Reset All to 0.50</button>
+        </div>
+        <div id="quiz-container" class="dims"></div>
+      </section>
+    </div>
+
+    <!-- Score panel -->
+    <aside class="score-panel card">
+      <div class="gauge-box">
+        <svg viewBox="0 0 200 200">
+          <defs>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#b45309"/><stop offset="55%" stop-color="#f5b942"/><stop offset="100%" stop-color="#fde68a"/>
+            </linearGradient>
+          </defs>
+          <circle class="ring-inner" cx="100" cy="100" r="70"/>
+          <circle class="ring-bg" cx="100" cy="100" r="86" pathLength="100"/>
+          <circle class="ring-prog" id="gauge-ring" cx="100" cy="100" r="86" pathLength="100"/>
+          <g id="gauge-ticks"></g>
+        </svg>
+        <div class="gauge-center">
+          <div class="gauge-score" id="sppi-score">0.550</div>
+          <div class="gauge-sub">Composite SPPI</div>
+        </div>
+      </div>
+
+      <span class="tier-badge t2" id="tier-badge">Tier II: Transitional Parity</span>
+
+      <div class="bars">
+        <div class="bar-row">
+          <div class="bl"><b>Sangat · Governance</b><span id="bar-sgov-val">0.60</span></div>
+          <div class="bar-track"><div class="bar-fill" id="bar-sgov"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bl"><b>Pangat · Distribution</b><span id="bar-pdist-val">0.55</span></div>
+          <div class="bar-track"><div class="bar-fill" id="bar-pdist"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bl"><b>Kirat-Vand · Economics</b><span id="bar-kecon-val">0.50</span></div>
+          <div class="bar-track"><div class="bar-fill" id="bar-kecon"></div></div>
+        </div>
+      </div>
+
+      <div class="minis">
+        <div class="mini"><span>V_d / L_p</span><b id="mini-sgov">0.60 / 0.60</b></div>
+        <div class="mini"><span>C_a / W_b</span><b id="mini-pdist">0.55 / 0.55</b></div>
+        <div class="mini"><span>A_p / U_c</span><b id="mini-kecon">0.50 / 0.50</b></div>
+      </div>
+
+      <div class="tier-desc" id="tier-desc">The institution has institutionalized formal compliance mechanisms, but systemic friction remains in capital allocation and deliberative authority.</div>
+
+      <div class="btn-row">
+        <button class="btn btn-gold" onclick="copyCitationSnippet()">📋 Copy Score &amp; Analysis for Paper</button>
+        <button class="btn btn-ghost" onclick="copyBibtexCitation()">📖 Copy BibTeX / APA Citation</button>
+        <button class="btn btn-goldlight" onclick="openReport()">📄 Generate Complete Report</button>
+      </div>
+      <div class="toast" id="toast"></div>
+
+      <div class="card gurbani-card" style="margin-top:20px; padding:18px">
+        <div class="gurmukhi">ਭੰਡਿ ਜੰਮੀਐ ਭੰਡਿ ਨਿੰਮੀਐ ॥<br>ਭੰਡਿ ਮੰਗਣੁ ਵੀਆਹੁ ਕਰਿ ਭੰਡਿ ਸੁ ਹਾਗੈ ਆਕਾਰੁ ॥</div>
+        <div class="src">Guru Granth Sahib &bull; Ang 473</div>
+        <p class="explain">"From woman, man is born; within woman, man is conceived; to woman he is engaged and married." — the theological refutation of patriarchal subordination anchoring this metric.</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Legacy -->
+  <section class="legacy">
+    <div class="sec-head">
+      <h3 class="font-serif">The Three Institutions of the Guru</h3>
+      <p>Each SPPI dimension is grounded in a 15th-century reform of Guru Nanak Dev Ji</p>
+      <div class="rule"></div>
+    </div>
+    <div class="legacy-grid">
+      <div class="card legacy-card">
+        <div class="dim-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><circle cx="5" cy="16" r="3.2"/><circle cx="19" cy="16" r="3.2"/><path d="M9 10.5 6.5 13.5M15 10.5l2.5 3M8 16h8"/></svg></div>
+        <h4>SANGAT · The Equal Assembly</h4>
+        <p>Guru Nanak taught that divine truth is revealed in congregation, not hierarchy. In the Sangat, the poorest laborer and the highest official sat side by side — caste, creed, and gender dissolved in collective deliberation. SPPI's governance dimension measures whether institutional voice carries that same parity.</p>
+        <span class="yr">c. 1500 &bull; Kartarpur Sahib</span>
+        <span class="big">੧</span>
+      </div>
+      <div class="card legacy-card">
+        <div class="dim-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M4 12c2.5-2 5.5-2 8 0s5.5 2 8 0M12 4v16"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h4>PANGAT · The Equal Row</h4>
+        <p>The Langar's Pangat — all humanity seated in one row to eat the same meal — dismantled Sutak: the ritual pollution doctrines that barred women and lower castes from shared space. Mata Sulakhani and the sangat itself became stewards of this radical equality. SPPI's distribution dimension measures who may freely touch the institution's resources.</p>
+        <span class="yr">c. 1481 &bull; First Langar</span>
+        <span class="big">੨</span>
+      </div>
+      <div class="card legacy-card">
+        <div class="dim-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M12 7c-2.5-1.5-5-1.5-7 0M12 7c2.5-1.5 5-1.5 7 0M5 21h14"/><path d="M9 12.5c1 1 2 1.5 3 1.5s2-.5 3-1.5"/></svg></div>
+        <h4>KIRAT &amp; VAND · Honest Shared Labor</h4>
+        <p>"Kirat Karo" — earn by honest labor; "Vand Chhako" — share what you earn. Guru Nanak rejected ascetic withdrawal and predatory accumulation alike, grounding dignity in productive work and mutual capital. SPPI's economic dimension measures whether women hold assets and whether care labor — the household's unseen Kirat — is honored.</p>
+        <span class="yr">Three Pillars &bull; Sikh Ethic</span>
+        <span class="big">੩</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rubric -->
+  <section class="rubric">
+    <div class="sec-head">
+      <h3 class="font-serif">Diagnostic Scoring Rubric</h3>
+      <p>Institutional assessment bands and their socio-theological interpretation</p>
+      <div class="rule"></div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Tier Score</th><th>Classification</th><th>Socio-Theological Interpretation</th><th>Institutional Prescription</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tier1">0.00 – 0.39</td>
+          <td class="tname">Tier I: Patriarchal Stratification</td>
+          <td>Pervasive glass ceilings; ritualized/biological exclusion; unpaid domestic labor treated as uncompensated dependency.</td>
+          <td>Mandatory gender audits; radical opening of decision assemblies; anti-harassment statutes.</td>
+        </tr>
+        <tr>
+          <td class="tier2">0.40 – 0.69</td>
+          <td class="tname">Tier II: Transitional Parity</td>
+          <td>Superficial quota compliance; structural barriers persist in venture capital, patents, and high-stakes executive vetoes.</td>
+          <td>Deepen financial equity lines; institutionalize algorithmic fairness; eliminate care penalty.</td>
+        </tr>
+        <tr>
+          <td class="tier3">0.70 – 1.00</td>
+          <td class="tname">Tier III: Sangat-Egalitarian Equilibrium</td>
+          <td>Realization of <em>Sarbat da Bhala</em>; complete parity of deliberative voice, shared economic stewardship, and unbiased technological access.</td>
+          <td>Sustain proactive mentorship; open-source institutional governance; export model to satellite units.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<footer>
+  <div class="gurmukhi">ੴ ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ ੴ</div>
+  <p>Sangat-Pangat Parity Index (SPPI) &bull; Designed for Guru Shiksha 11th Edition Competition Paper</p>
+  <p>Honoring Guru Nanak Dev Ji (1469–1539) &bull; Open Research Artifact &bull; CC-BY 4.0 International</p>
+</footer>
+
+<script>
+  const QUESTION_BANK = {
+    edu: [
+      { dim:"Dimension 1: Sangat Governance Parity (S_gov)", subCode:"vd", subTitle:"1.1 Deliberative Voice & Consensus Rights (V_d)", questions:[
+        { q:"Do female faculty members and student representatives hold formal voting rights and agenda-setting authority in the Academic Council, Board of Studies, and IQAC?", ev:"Committee charters, meeting minutes" },
+        { q:"Are dissent notes or policy proposals raised by women in departmental meetings formally recorded and acted upon with equal frequency?", ev:"Departmental review logs, climate survey" },
+        { q:"Do female students have equal representation and independent budgetary control in elected student unions and technical/cultural committees?", ev:"Student council bylaws, budget records" }]},
+      { dim:"Dimension 1: Sangat Governance Parity (S_gov)", subCode:"lp", subTitle:"1.2 Governing Board & Strategic Representation (L_p)", questions:[
+        { q:"What proportion of statutory leadership positions (Vice-Chancellor/Principal, Deans, HoDs, Governing Trust members) are occupied by women?", ev:"Leadership directory, NIRF/NAAC SSR" },
+        { q:"Are women represented equitably on high-stakes statutory committees (Finance, Recruitment, Infrastructure, Disciplinary), beyond welfare panels?", ev:"Committee roster breakdown by gender" },
+        { q:"Does the institution enforce gender-balanced search committees and blind CV shortlisting for senior academic appointments?", ev:"Recruitment SOPs, selection records" }]},
+      { dim:"Dimension 2: Pangat Distributive Equity (P_dist)", subCode:"ca", subTitle:"2.1 Commons & STEM Infrastructure Access (C_a)", questions:[
+        { q:"Do female students and researchers enjoy identical 24/7 access to central libraries, robotics/engineering workshops, and computing labs without restrictive curfews?", ev:"Campus access logs, hostel rulebooks" },
+        { q:"What share of institutional seed-research grants, lab space allocations, and PhD fellowships in STEM departments are awarded to female PIs?", ev:"R&D grant ledger, fellowship data" },
+        { q:"Are AI/ML curricula and student capstone datasets audited for gender bias, with targeted mentorship to retain women in core STEM tracks?", ev:"Syllabi, STEM retention ratios" }]},
+      { dim:"Dimension 2: Pangat Distributive Equity (P_dist)", subCode:"wb", subTitle:"2.2 Bodily Dignity & Sutak De-stigmatization (W_b)", questions:[
+        { q:"Are clean, well-maintained washrooms, free sanitary napkin dispensers, and disposal units available across every academic, lab, and hostel block?", ev:"Campus infrastructure audit" },
+        { q:"Does the institution provide menstrual or reproductive health leave/attendance relaxation so students and faculty are not penalized academically?", ev:"Academic attendance & leave rules" },
+        { q:"Is the Internal Complaints Committee (ICC) under the POSH Act independently constituted, visible, and proven to resolve complaints transparently?", ev:"Annual POSH compliance report" }]},
+      { dim:"Dimension 3: Kirat-Vand Economic Autonomy (K_econ)", subCode:"ap", subTitle:"3.1 Asset Entitlement & Capital Parity (A_p)", questions:[
+        { q:"What proportion of institutional patents, copyright filings, and tech-transfer royalties list female faculty or students as primary inventors?", ev:"IP cell registry, royalty ledger" },
+        { q:"What percentage of campus incubation center seed funding, startup equity, and entrepreneurship grants are allocated to women-led ventures?", ev:"Incubation portfolio & cap tables" },
+        { q:"Is there verified pay parity across identical faculty cadres and administrative staff, with transparent Career Advancement Scheme (CAS) criteria?", ev:"Payroll audit, HR compensation bands" }]},
+      { dim:"Dimension 3: Kirat-Vand Economic Autonomy (K_econ)", subCode:"uc", subTitle:"3.2 Unpaid Care Labor Valuation (U_c)", questions:[
+        { q:"Does the campus operate an affordable, accessible on-campus crèche/daycare facility for children of faculty, staff, and research scholars?", ev:"Campus welfare directory" },
+        { q:"Are tenure-track windows, CAS promotion clocks, and PhD submission deadlines automatically extended following parental or elder-care leave?", ev:"University service & PhD regulations" },
+        { q:"Are timetable scheduling policies designed to accommodate caregiving responsibilities (e.g., avoiding mandatory late-evening meetings)?", ev:"Departmental scheduling guidelines" }]}
+    ],
+    org: [
+      { dim:"Dimension 1: Sangat Governance Parity (S_gov)", subCode:"vd", subTitle:"1.1 Deliberative Voice & Consensus Rights (V_d)", questions:[
+        { q:"In executive and cross-functional meetings, are structured turn-taking or blind-proposal mechanisms used to prevent informal male vetoes?", ev:"Governance SOPs, 360-degree feedback" },
+        { q:"Do employee resource groups (ERGs) or women's councils have direct escalation pathways to the Board of Directors with binding response timelines?", ev:"Board escalation logs, HR policy" },
+        { q:"Are major organizational restructurings, M&A decisions, and policy changes subjected to mandatory gender-impact consultations before sign-off?", ev:"Policy sign-off checklists" }]},
+      { dim:"Dimension 1: Sangat Governance Parity (S_gov)", subCode:"lp", subTitle:"1.2 Governing Board & Strategic Representation (L_p)", questions:[
+        { q:"What percentage of C-suite roles (CEO, CFO, CTO, COO) and voting seats on the Board of Directors are held by women?", ev:"Annual report, governance filings" },
+        { q:"Do women lead revenue-generating Profit & Loss (P&L) business units and core engineering/product divisions, beyond support functions (HR, CSR)?", ev:"Org chart, P&L ownership matrix" },
+        { q:"Are succession pipelines for Vice President and Director roles audited annually to eliminate mid-career attrition ('leaky pipeline')?", ev:"Talent review & promotion metrics" }]},
+      { dim:"Dimension 2: Pangat Distributive Equity (P_dist)", subCode:"ca", subTitle:"2.1 Commons & STEM Infrastructure Access (C_a)", questions:[
+        { q:"Do female engineers, analysts, and researchers receive equal allocation of cloud compute credits, R&D budgets, and high-visibility projects?", ev:"IT/R&D resource logs, staffing data" },
+        { q:"Does the organization conduct mandatory algorithmic fairness audits on internal AI tools (resume screeners, rating models, credit algorithms)?", ev:"Model audit reports, AI ethics docs" },
+        { q:"Is technical upskilling (AI, cloud architecture, executive bootcamps) funded and utilized at equal rates across genders?", ev:"L&D participation & budget records" }]},
+      { dim:"Dimension 2: Pangat Distributive Equity (P_dist)", subCode:"wb", subTitle:"2.2 Bodily Dignity & Sutak De-stigmatization (W_b)", questions:[
+        { q:"Do all offices, manufacturing plants, and field sites provide dedicated lactation rooms, women-tailored safety gear, and hygienic sanitation?", ev:"Facility checklists, EHS reports" },
+        { q:"Does corporate health insurance cover comprehensive reproductive, maternal, and mental healthcare without discriminatory exclusions?", ev:"Group health insurance schedule" },
+        { q:"Are anonymous reporting channels and zero-tolerance anti-harassment enforcement actively audited across physical and remote workspaces?", ev:"HR compliance logs, safety survey" }]},
+      { dim:"Dimension 3: Kirat-Vand Economic Autonomy (K_econ)", subCode:"ap", subTitle:"3.1 Asset Entitlement & Capital Parity (A_p)", questions:[
+        { q:"Does an annual third-party pay-equity audit confirm zero unexplained gender wage gap across identical job grades, ratings, and tenure?", ev:"Annual pay-equity audit report" },
+        { q:"Do women hold an equitable share of Employee Stock Ownership Plans (ESOPs), performance bonuses, and profit-sharing pools?", ev:"Compensation & equity ledger" },
+        { q:"In procurement and supply-chain management, what percentage of vendor contracts and enterprise credit lines go to women-owned businesses?", ev:"Supplier diversity records" }]},
+      { dim:"Dimension 3: Kirat-Vand Economic Autonomy (K_econ)", subCode:"uc", subTitle:"3.2 Unpaid Care Labor Valuation (U_c)", questions:[
+        { q:"Does the organization offer paid parental leave for both primary and secondary caregivers, paired with a structured 'returnship' program?", ev:"HR leave policy, return retention rate" },
+        { q:"Are performance appraisals calibrated to evaluate output rather than physical 'presenteeism,' protecting remote or flexible staff?", ev:"Appraisal rubrics, promotion audits" },
+        { q:"Does the organization provide dependent-care stipends, backup childcare/eldercare support, or emergency care leave?", ev:"Employee benefits handbook" }]}
+    ]
+  };
+
+  const RATING_LABELS = {'0.00':'Absent / Excluded','0.25':'Tokenistic','0.50':'Transitional','0.75':'Substantive','1.00':'Sangat Equilibrium'};
+  let currentMode = 'slider';
+  let lastPreset = 'sangat';
+
+  /* ── starfield & gauge ticks ── */
+  (function(){
+    const c = document.getElementById('stars');
+    for(let i=0;i<70;i++){
+      const s = document.createElement('i');
+      s.style.left = Math.random()*100+'%';
+      s.style.top = Math.random()*100+'%';
+      s.style.setProperty('--d',(2+Math.random()*5)+'s');
+      s.style.animationDelay = (Math.random()*5)+'s';
+      if(Math.random()<.25) s.style.background='#93c5fd';
+      c.appendChild(s);
+    }
+    const g = document.getElementById('gauge-ticks');
+    for(let i=0;i<40;i++){
+      const a = i/40*2*Math.PI - Math.PI/2;
+      const long = i%5===0, r1 = long?76:80, r2 = 84;
+      const l = document.createElementNS('http://www.w3.org/2000/svg','line');
+      l.setAttribute('x1',100+Math.cos(a)*r1); l.setAttribute('y1',100+Math.sin(a)*r1);
+      l.setAttribute('x2',100+Math.cos(a)*r2); l.setAttribute('y2',100+Math.sin(a)*r2);
+      l.setAttribute('stroke','rgba(245,185,66,'+(long?'.5':'.22')+')');
+      l.setAttribute('stroke-width', long?1.6:1);
+      g.appendChild(l);
+    }
+  })();
+
+  /* ── mode switching ── */
+  function setMode(mode){
+    currentMode = mode;
+    const on = 'mode-btn active', off = 'mode-btn';
+    document.getElementById('btn-mode-slider').className = mode==='slider' ? on : off;
+    document.getElementById('btn-mode-quiz').className   = mode==='quiz'   ? on : off;
+    document.getElementById('panel-sliders').classList.toggle('hidden', mode!=='slider');
+    document.getElementById('panel-quiz').classList.toggle('hidden', mode!=='quiz');
+    document.getElementById('sector-selector-box').classList.toggle('hidden', mode!=='quiz');
+    if(mode==='quiz') renderQuiz();
+  }
+
+  /* ── questionnaire ── */
+  function renderQuiz(){
+    const sector = document.getElementById('sector-select').value;
+    const container = document.getElementById('quiz-container');
+    const groups = QUESTION_BANK[sector];
+    let html = '';
+    groups.forEach((group) => {
+      const current = parseFloat(document.getElementById('slider-'+group.subCode).value);
+      const snapped = (Math.round(current*4)/4).toFixed(2);
+      html += '<div class="card quiz-group"><div class="dim-head" style="padding-bottom:10px">'
+        + '<div><div class="num">' + group.dim + '</div><h3 style="font-size:.88rem">' + group.subTitle + '</h3></div>'
+        + '<span class="avg-badge" id="quiz-sub-badge-' + group.subCode + '">Avg: ' + current.toFixed(2) + '</span></div>';
+      group.questions.forEach((item, qIdx) => {
+        html += '<div class="q-card"><p><span class="qnum">Q' + (qIdx+1) + '.</span>' + item.q + '</p>'
+          + '<div class="q-foot"><span class="q-ev">📎 Evidence: ' + item.ev + '</span>'
+          + '<select data-sub="' + group.subCode + '" onchange="recalculateFromQuiz()" class="quiz-select">'
+          + ['0.00','0.25','0.50','0.75','1.00'].map(v =>
+              '<option value="'+v+'"'+(snapped===v?' selected':'')+'>'+v+' — '+RATING_LABELS[v]+'</option>').join('')
+          + '</select></div></div>';
+      });
+      html += '</div>';
+    });
+    container.innerHTML = html;
+    recalculateFromQuiz();
+  }
+
+  function recalculateFromQuiz(){
+    ['vd','lp','ca','wb','ap','uc'].forEach(code => {
+      const selects = document.querySelectorAll('.quiz-answer[data-sub="'+code+'"], .quiz-select[data-sub="'+code+'"]');
+      if(selects.length){
+        let sum = 0;
+        selects.forEach(s => { sum += parseFloat(s.value); });
+        document.getElementById('slider-'+code).value = (sum/selects.length).toFixed(2);
+        const badge = document.getElementById('quiz-sub-badge-'+code);
+        if(badge) badge.innerText = 'Avg: ' + (sum/selects.length).toFixed(2);
+      }
+    });
+    calculateSPPI();
+  }
+
+  function resetQuizScores(val){
+    document.querySelectorAll('.quiz-select').forEach(s => { s.value = val.toFixed(2); });
+    recalculateFromQuiz();
+  }
+
+  /* ── core calculation ── */
+  function paintSlider(el){
+    const pct = (el.value - el.min)/(el.max - el.min)*100;
+    el.style.background = 'linear-gradient(90deg,#b45309 0%,#f5b942 '+pct+'%,#fbbf24 '+pct+'%,#1a2138 '+pct+'%)';
+    const bubble = document.getElementById('val-'+el.id.split('-')[1]);
+    bubble.innerText = parseFloat(el.value).toFixed(2);
+    bubble.style.left = 'calc('+pct+'%)';
+  }
+
+  function calculateSPPI(){
+    ['vd','lp','ca','wb','ap','uc'].forEach(id => paintSlider(document.getElementById('slider-'+id)));
+    const v = id => parseFloat(document.getElementById('slider-'+id).value);
+
+    document.getElementById('mini-sgov').innerText  = v('vd').toFixed(2)+' / '+v('lp').toFixed(2);
+    document.getElementById('mini-pdist').innerText = v('ca').toFixed(2)+' / '+v('wb').toFixed(2);
+    document.getElementById('mini-kecon').innerText = v('ap').toFixed(2)+' / '+v('uc').toFixed(2);
+
+    const sgov=(v('vd')+v('lp'))/2, pdist=(v('ca')+v('wb'))/2, kecon=(v('ap')+v('uc'))/2;
+    document.getElementById('score-sgov').innerText  = sgov.toFixed(2);
+    document.getElementById('score-pdist').innerText = pdist.toFixed(2);
+    document.getElementById('score-kecon').innerText = kecon.toFixed(2);
+
+    document.getElementById('bar-sgov').style.width  = (sgov*100)+'%';
+    document.getElementById('bar-pdist').style.width = (pdist*100)+'%';
+    document.getElementById('bar-kecon').style.width = (kecon*100)+'%';
+    document.getElementById('bar-sgov-val').innerText  = sgov.toFixed(2);
+    document.getElementById('bar-pdist-val').innerText = pdist.toFixed(2);
+    document.getElementById('bar-kecon-val').innerText = kecon.toFixed(2);
+
+    const sppi = (sgov+pdist+kecon)/3;
+    document.getElementById('sppi-score').innerText = sppi.toFixed(3);
+    document.getElementById('gauge-ring').style.strokeDashoffset = 100 - sppi*100;
+
+    const badge = document.getElementById('tier-badge');
+    const desc  = document.getElementById('tier-desc');
+    if(sppi < 0.40){
+      badge.innerText = 'Tier I: Patriarchal Stratification'; badge.className = 'tier-badge t1';
+      desc.innerText = 'The assessed institution reflects systemic asymmetries across leadership, restricted access to capital, and lingering biological and societal taboos — far from the Guru\u2019s Pangat.';
+    } else if(sppi < 0.70){
+      badge.innerText = 'Tier II: Transitional Parity'; badge.className = 'tier-badge t2';
+      desc.innerText = 'The institution has established formal quotas and compliance, but structural friction persists in deliberative authority, venture funding, and care parity — the Sangat is open, yet not yet equal.';
+    } else {
+      badge.innerText = 'Tier III: Sangat-Egalitarian Equilibrium'; badge.className = 'tier-badge t3';
+      desc.innerText = 'The institution fulfills the egalitarian ethos of Sarbat da Bhala — co-equal voice in the Sangat, Pangat-like access to resources, and Kirat-Vand shared economic autonomy.';
+    }
+  }
+
+  /* ── presets ── */
+  function setValues(a,b,c,d,e,f){
+    ['vd','lp','ca','wb','ap','uc'].forEach((id,i) => {
+      document.getElementById('slider-'+id).value = [a,b,c,d,e,f][i];
+    });
+  }
+
+  function applyPreset(name){
+    lastPreset = name;
+    const map = {
+      patriarchal:[0.25,0.25,0.25,0.25,0.00,0.25],
+      corporate:  [0.50,0.25,0.50,0.50,0.50,0.25],
+      academic:   [0.75,0.50,0.75,0.50,0.50,0.50],
+      sangat:     [1.00,1.00,1.00,1.00,1.00,1.00]
+    };
+    setValues.apply(null, map[name]);
+    document.querySelectorAll('.preset').forEach(b => {
+      b.classList.toggle('active', b.dataset.p===name);
+      b.classList.remove('pulse'); void b.offsetWidth; b.classList.add('pulse');
+    });
+    if(currentMode==='quiz') renderQuiz(); else calculateSPPI();
+  }
+
+  function showToast(msg){
+    const t = document.getElementById('toast');
+    t.innerText = msg; t.style.opacity = '1';
+    setTimeout(()=>{ t.style.opacity='0'; }, 2500);
+  }
+
+  function copyCitationSnippet(){
+    const d = collectData();
+    const text = 'Diagnostic Evaluation (SPPI Metric — ' + d.modeLabel + '):\n'
+      + 'Composite Sangat-Pangat Parity Index: ' + d.sppi.toFixed(3) + ' (' + d.tier.name + ')\n'
+      + '- Sangat Governance Parity (S_gov): ' + d.sgov.toFixed(2) + '\n'
+      + '- Pangat Distributive Equity (P_dist): ' + d.pdist.toFixed(2) + '\n'
+      + '- Kirat-Vand Economic Autonomy (K_econ): ' + d.kecon.toFixed(2) + '\n'
+      + 'Framework: Operationalized from Guru Nanak\u2019s egalitarian philosophy (Guru Granth Sahib, Ang 473).';
+    navigator.clipboard.writeText(text).then(() => showToast('✦ Copied diagnostic score to clipboard!'));
+  }
+
+  function copyBibtexCitation(){
+    const bibtex = '@misc{sppi2026,\n'
+      + '  author = {Research Submission, Guru Shiksha},\n'
+      + '  title = {Sangat-Pangat Parity Index (SPPI): An Operational Metric for Institutional Gender Equity Inspired by Guru Nanak\'s Philosophy},\n'
+      + '  year = {2026},\n'
+      + '  howpublished = {Interactive Research Artifact},\n'
+      + '  note = {Version 2.0 — Dual Mode (Direct Calibration & 18-Point Questionnaire Audit)}\n}';
+    navigator.clipboard.writeText(bibtex).then(() => showToast('✦ Copied BibTeX citation to clipboard!'));
+  }
+
+  /* ── complete report ── */
+  const INDICATORS = [
+    {id:'vd', sym:'V_d', name:'Deliberative Voice & Consensus Rights',       dim:'Sangat (S_gov)'},
+    {id:'lp', sym:'L_p', name:'Governing Board & Strategic Representation',    dim:'Sangat (S_gov)'},
+    {id:'ca', sym:'C_a', name:'Commons & STEM Infrastructure Access',          dim:'Pangat (P_dist)'},
+    {id:'wb', sym:'W_b', name:'Bodily Equity & Sutak De-stigmatization',       dim:'Pangat (P_dist)'},
+    {id:'ap', sym:'A_p', name:'Asset Entitlement & Capital Parity',            dim:'Kirat-Vand (K_econ)'},
+    {id:'uc', sym:'U_c', name:'Unpaid Care Labor Valuation',                 dim:'Kirat-Vand (K_econ)'}
+  ];
+
+  function collectData(){
+    const v = id => parseFloat(document.getElementById('slider-'+id).value);
+    const sgov=(v('vd')+v('lp'))/2, pdist=(v('ca')+v('wb'))/2, kecon=(v('ap')+v('uc'))/2;
+    const sppi=(sgov+pdist+kecon)/3;
+    const tier = sppi<0.40 ? {n:1, name:'Tier I: Patriarchal Stratification'}
+               : sppi<0.70 ? {n:2, name:'Tier II: Transitional Parity'}
+               : {n:3, name:'Tier III: Sangat-Egalitarian Equilibrium'};
+    const interp = {
+      1:'The assessed institution reflects systemic asymmetries across leadership, restricted access to capital, and lingering biological and societal taboos \u2014 far from the Guru\u2019s Pangat.',
+      2:'The institution has established formal quotas and compliance, but structural friction persists in deliberative authority, venture funding, and care parity \u2014 the Sangat is open, yet not yet equal.',
+      3:'The institution fulfills the egalitarian ethos of Sarbat da Bhala \u2014 co-equal voice in the Sangat, Pangat-like access to resources, and Kirat-Vand shared economic autonomy.'
+    }[tier.n];
+    const presc = {
+      1:'Mandatory gender audits; radical opening of decision assemblies; anti-harassment statutes with enforcement teeth.',
+      2:'Deepen financial equity lines; institutionalize algorithmic fairness; eliminate the care penalty through credited leave and accommodation.',
+      3:'Sustain proactive mentorship; open-source institutional governance; export the model to satellite units.'
+    }[tier.n];
+    const modeLabel = currentMode==='quiz'
+      ? 'Audit Questionnaire \u2014 ' + document.getElementById('sector-select').options[document.getElementById('sector-select').selectedIndex].text
+      : 'Direct Sub-Indicator Calibration';
+    let responses = null;
+    if(currentMode==='quiz'){
+      responses = [];
+      const groups = QUESTION_BANK[document.getElementById('sector-select').value];
+      let qn = 0;
+      groups.forEach(g => g.questions.forEach(item => {
+        qn++;
+        const sel = document.querySelector('.quiz-select[data-sub="'+g.subCode+'"]');
+        const val = sel ? parseFloat(sel.value) : 0;
+        responses.push({qn:qn, sub:g.subTitle, q:item.q, val:val});
+      }));
+      // re-query per question in document order
+      responses = [];
+      const sels = document.querySelectorAll('.quiz-select');
+      qn = 0;
+      groups.forEach(g => g.questions.forEach(item => {
+        const val = sels[qn] ? parseFloat(sels[qn].value) : 0;
+        responses.push({qn:qn+1, sub:g.subTitle, q:item.q, val:val});
+        qn++;
+      }));
+    }
+    return {v:v, sgov:sgov, pdist:pdist, kecon:kecon, sppi:sppi, tier:tier, interp:interp, presc:presc, modeLabel:modeLabel, responses:responses};
+  }
+
+  function reportHTML(d){
+    const now = new Date().toLocaleString('en-IN', {dateStyle:'long', timeStyle:'short'});
+    const dimRow = (label, mean, val) =>
+      '<tr><td><b>'+label+'</b><br><span style="color:#8a6a3c; font-size:.66rem">'+mean+'</span></td>'
+      + '<td class="mono">'+val.toFixed(2)+'</td>'
+      + '<td><div class="r-bar"><i style="width:'+(val*100)+'%"></i></div></td></tr>';
+    const indRows = INDICATORS.map(i =>
+      '<tr><td><b>'+i.name+'</b><br><span style="color:#8a6a3c; font-size:.66rem">'+i.sym+' \u00B7 '+i.dim+'</span></td>'
+      + '<td class="mono">'+d.v(i.id).toFixed(2)+'</td>'
+      + '<td><div class="r-bar"><i style="width:'+(d.v(i.id)*100)+'%"></i></div></td></tr>').join('');
+    let audit = '';
+    if(d.responses){
+      const rows = d.responses.map(r =>
+        '<tr><td class="mono">Q'+r.qn+'</td><td style="font-size:.7rem">'+r.q+'<br><span style="color:#8a6a3c; font-size:.62rem">'+r.sub+'</span></td>'
+        + '<td class="mono">'+r.val.toFixed(2)+'</td><td>'+RATING_LABELS[r.val.toFixed(2)]+'</td></tr>').join('');
+      audit = '<h3>Audit Questionnaire Responses (18 Points)</h3>'
+        + '<table class="r-table"><tr><th>#</th><th>Question</th><th>Value</th><th>Rating</th></tr>'+rows+'</table>';
+    }
+    return ''
+    + '<button class="r-close no-print" onclick="closeReport()" title="Close">\u2715</button>'
+    + '<div class="r-ikon">\u0A74</div>'
+    + '<h2>Complete Diagnostic Report</h2>'
+    + '<div class="r-meta">Sangat-Pangat Parity Index (SPPI) \u2022 Generated ' + now
+    + '<br>Evaluation Mode: ' + d.modeLabel + '</div>'
+    + '<div class="r-rule"></div>'
+    + '<h3>Executive Summary</h3>'
+    + '<div class="r-exec"><div><div class="r-big">'+d.sppi.toFixed(3)+'</div>'
+    + '<span class="r-tierpill t'+d.tier.n+'">'+d.tier.name+'</span></div><p>'+d.interp+'</p></div>'
+    + '<h3>Dimension Breakdown</h3>'
+    + '<table class="r-table"><tr><th>Dimension</th><th>Score</th><th>Visualization</th></tr>'
+    + dimRow('Sangat Governance Parity (S<sub>gov</sub>)','V_d &amp; L_p mean',d.sgov)
+    + dimRow('Pangat Distributive Equity (P<sub>dist</sub>)','C_a &amp; W_b mean',d.pdist)
+    + dimRow('Kirat-Vand Economic Autonomy (K<sub>econ</sub>)','A_p &amp; U_c mean',d.kecon)
+    + '</table>'
+    + '<h3>Indicator-Level Scores</h3>'
+    + '<table class="r-table"><tr><th>Indicator</th><th>Raw Value</th><th>Visualization</th></tr>'+indRows+'</table>'
+    + audit
+    + '<h3>Tier Interpretation &amp; Prescription</h3>'
+    + '<div class="r-callout"><b>Interpretation:</b> '+d.interp+'<br><br><b>Prescription:</b> '+d.presc+'</div>'
+    + '<h3>Theoretical Foundation</h3>'
+    + '<div class="r-shabad"><div class="gurmukhi">\u0A38\u0A4B \u0A15\u0A3F\u0A13\u0A02 \u0A2E\u0A70\u0A26\u0A3E \u0A06\u0A16\u0A40\u0A08\u0A07 \u0A1C\u0A3F\u0A24\u0A41 \u0A1C\u0A02\u0A2E\u0B39\u0A3F \u0B2B\u0A3E\u0A1C\u0A3E\u0A28 \u0964</div>'
+    + '<div class="trans">\u201CSo kyon manda aakhee-ai, jit jammeh raajaan\u201D \u2014 Why call her inferior, from whom kings are born?</div>'
+    + '<div class="cite">Sri Guru Granth Sahib Ji \u2022 Ang 473 \u2022 Guru Nanak Dev Ji</div></div>'
+    + '<div class="r-formula">SPPI = \u2153 \u00B7 S_gov + \u2153 \u00B7 P_dist + \u2153 \u00B7 K_econ &nbsp;=&nbsp; ('
+    + d.sgov.toFixed(2)+' + '+d.pdist.toFixed(2)+' + '+d.kecon.toFixed(2)+') / 3 = <b>'+d.sppi.toFixed(3)+'</b></div>'
+    + '<h3>Rubric Reference</h3>'
+    + '<table class="r-table"><tr><th>Band</th><th>Classification</th></tr>'
+    + '<tr><td class="mono" style="color:#991b1b">0.00 \u2013 0.39</td><td>Tier I: Patriarchal Stratification</td></tr>'
+    + '<tr><td class="mono" style="color:#92400e">0.40 \u2013 0.69</td><td>Tier II: Transitional Parity</td></tr>'
+    + '<tr><td class="mono" style="color:#065f46">0.70 \u2013 1.00</td><td>Tier III: Sangat-Egalitarian Equilibrium</td></tr></table>'
+    + '<div class="r-actions no-print">'
+    + '<button class="r-btn r-btn-gold" onclick="window.print()">\u{1F5A8}\uFE0E Print / Save as PDF</button>'
+    + '<button class="r-btn r-btn-ghost" onclick="downloadReportTxt()">\u2B07 Download as Text File</button>'
+    + '</div>'
+    + '<div class="r-foot">Sangat-Pangat Parity Index (SPPI) \u2022 Guru Shiksha 11th Edition Competition Paper<br>'
+    + 'Operationalized from the egalitarian philosophy of Guru Nanak Dev Ji (1469\u20131539) \u2022 Open Research Artifact \u2022 CC-BY 4.0</div>';
+  }
+
+  function openReport(){
+    let ov = document.getElementById('report-overlay');
+    if(!ov){
+      ov = document.createElement('div');
+      ov.id = 'report-overlay';
+      ov.className = 'modal-overlay';
+      ov.addEventListener('click', e => { if(e.target===ov) closeReport(); });
+      const rep = document.createElement('div');
+      rep.className = 'report'; rep.id = 'report-body';
+      ov.appendChild(rep);
+      document.body.appendChild(ov);
+      document.addEventListener('keydown', e => { if(e.key==='Escape') closeReport(); });
+    }
+    document.getElementById('report-body').innerHTML = reportHTML(collectData());
+    ov.classList.add('open');
+    ov.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeReport(){
+    const ov = document.getElementById('report-overlay');
+    if(ov) ov.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function downloadReportTxt(){
+    const d = collectData();
+    const now = new Date().toLocaleString('en-IN', {dateStyle:'long', timeStyle:'short'});
+    let t = '';
+    t += '\u0A74 SATNAM WAHEGURU \u0A74\n';
+    t += 'SANGAT-PANGAT PARITY INDEX (SPPI) — COMPLETE DIAGNOSTIC REPORT\n';
+    t += '='.repeat(66) + '\n';
+    t += 'Generated : ' + now + '\n';
+    t += 'Mode      : ' + d.modeLabel + '\n\n';
+    t += 'EXECUTIVE SUMMARY\n' + '-'.repeat(66) + '\n';
+    t += 'Composite SPPI Score : ' + d.sppi.toFixed(3) + '\n';
+    t += 'Tier Classification  : ' + d.tier.name + '\n';
+    t += 'Interpretation       : ' + d.interp + '\n\n';
+    t += 'DIMENSION BREAKDOWN\n' + '-'.repeat(66) + '\n';
+    t += 'Sangat Governance Parity        (S_gov)  : ' + d.sgov.toFixed(2) + '\n';
+    t += 'Pangat Distributive Equity      (P_dist) : ' + d.pdist.toFixed(2) + '\n';
+    t += 'Kirat-Vand Economic Autonomy    (K_econ) : ' + d.kecon.toFixed(2) + '\n\n';
+    t += 'INDICATOR-LEVEL SCORES\n' + '-'.repeat(66) + '\n';
+    INDICATORS.forEach(i => { t += i.sym.padEnd(6) + ' ' + i.name.padEnd(46) + ' : ' + d.v(i.id).toFixed(2) + '\n'; });
+    if(d.responses){
+      t += '\nAUDIT QUESTIONNAIRE RESPONSES (18 POINTS)\n' + '-'.repeat(66) + '\n';
+      d.responses.forEach(r => { t += 'Q'+String(r.qn).padEnd(3) + ' ['+r.val.toFixed(2)+' — '+RATING_LABELS[r.val.toFixed(2)]+'] ' + r.q + '\n'; });
+    }
+    t += '\nTIER PRESCRIPTION\n' + '-'.repeat(66) + '\n' + d.presc + '\n\n';
+    t += 'THEORETICAL FOUNDATION\n' + '-'.repeat(66) + '\n';
+    t += '"So kyon manda aakhee-ai, jit jammeh raajaan" — Guru Granth Sahib, Ang 473\n';
+    t += 'SPPI = 1/3 * S_gov + 1/3 * P_dist + 1/3 * K_econ\n\n';
+    t += 'Framework operationalized from the egalitarian philosophy of Guru Nanak Dev Ji (1469-1539).\n';
+    t += 'Open Research Artifact — CC-BY 4.0 International\n';
+    const blob = new Blob([t], {type:'text/plain;charset=utf-8'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'SPPI_Complete_Report_' + d.sppi.toFixed(3) + '.txt';
+    a.click();
+    URL.revokeObjectURL(a.href);
+    showToast('\u2726 Report downloaded!');
+  }
+
+  /* ── init ── */
+  applyPreset('sangat');
+</script>
+</body>
+</html>
