@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sangat Pangat Parity Index (SPPI) | Interactive Research Tool</title>
+  <title>Sangat-Pangat Parity Index (SPPI) | Interactive Research Tool</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,13 +22,14 @@
       <div>
         <div class="flex items-center gap-2">
           <span class="inline-block w-3 h-3 rounded-full bg-amber-500 animate-pulse"></span>
-          <h1 class="text-lg md:text-xl font-bold tracking-wide text-amber-100 font-serif-title">Sangat Pangat Parity Index (SPI)</h1>
+          <h1 class="text-lg md:text-xl font-bold tracking-wide text-amber-100 font-serif-title">Sangat-Pangat Parity Index (SPPI)</h1>
         </div>
         <p class="text-xs text-slate-400">Guru Shiksha 11th Edition Competition &bull; Academic Diagnostic Metric</p>
       </div>
-      <div class="flex items-center gap-2 text-xs">
-        <button onclick="applyPreset('academic')" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-200 transition">Academic Org</button>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <button onclick="applyPreset('patriarchal')" class="px-3 py-1.5 rounded-lg border border-red-700/60 bg-red-950/40 text-red-300 hover:bg-red-900/50 transition">Patriarchal (Tier I)</button>
         <button onclick="applyPreset('corporate')" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-200 transition">Corporate</button>
+        <button onclick="applyPreset('academic')" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-200 transition">Academic Org</button>
         <button onclick="applyPreset('sangat')" class="px-3 py-1.5 rounded-lg border border-amber-600/60 bg-amber-950/40 text-amber-300 hover:bg-amber-900/50 transition">Sangat Ideal</button>
       </div>
     </div>
@@ -36,16 +37,38 @@
 
   <main class="max-w-6xl mx-auto px-4 py-8 space-y-8">
 
-    <!-- Overview Banner -->
-    <section class="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900/80 to-amber-950/20 p-6 md:p-8 shadow-xl">
-      <div class="max-w-3xl space-y-3">
+    <!-- Overview Banner & Mode Switcher -->
+    <section class="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900/80 to-amber-950/20 p-6 md:p-8 shadow-xl flex flex-col lg:flex-row justify-between gap-6 items-start lg:items-center">
+      <div class="max-w-2xl space-y-3">
         <span class="text-xs font-semibold tracking-wider text-amber-400 uppercase bg-amber-950/60 border border-amber-800/60 px-2.5 py-1 rounded-full">Theoretical Foundation</span>
-        <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Quantifying Gender Parity Through Guru Nanak's Egalitarian Teachings</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Quantifying Gender Parity Through Guru Nanak's Egalitarian Praxis</h2>
         <p class="text-slate-300 text-sm leading-relaxed">
-          The <strong>Sangat Pangat Parity Index (SPPI)</strong> operationalizes 15th-century Sikh socio-theological frameworks into a quantitative instrument for assessing institutional equity across governance, resource distribution, and economic self-determination.
+          Evaluate institutional equity either by adjusting the <strong>6 sub-indicator sliders directly</strong> or by answering the <strong>18-question institutional audit questionnaire</strong> for Educational Institutions or Organizations.
         </p>
         <div class="p-3 bg-slate-950/60 border border-slate-800 rounded-xl text-xs font-mono text-amber-300/90 inline-block">
-          SPPI = ⅓ &bull; S_gov + ⅓ &bull; P_dist + ⅓ &bull; K_econ
+          SPPI = &frac13; &bull; S_gov + &frac13; &bull; P_dist + &frac13; &bull; K_econ
+        </div>
+      </div>
+
+      <!-- Mode Toggle Card -->
+      <div class="w-full lg:w-auto bg-slate-950/90 border border-slate-800 p-4 rounded-xl space-y-3 shrink-0">
+        <span class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold block">Evaluation Mode</span>
+        <div class="grid grid-cols-2 gap-2">
+          <button id="btn-mode-slider" onclick="setMode('slider')" class="px-4 py-2.5 rounded-lg text-xs font-semibold bg-amber-600 text-white shadow transition">
+            Direct Sliders
+          </button>
+          <button id="btn-mode-quiz" onclick="setMode('quiz')" class="px-4 py-2.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+            Audit Questionnaire
+          </button>
+        </div>
+
+        <!-- Sector Selector (Visible in Quiz Mode) -->
+        <div id="sector-selector-box" class="hidden pt-2 border-t border-slate-800 space-y-1.5">
+          <label for="sector-select" class="text-[11px] text-amber-300 font-medium block">Select Institution Type:</label>
+          <select id="sector-select" onchange="renderQuiz()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-100 focus:outline-none focus:border-amber-500">
+            <option value="edu">Educational Institution (College / University)</option>
+            <option value="org">Organization (Corporate / NGO / Public Body)</option>
+          </select>
         </div>
       </div>
     </section>
@@ -53,104 +76,122 @@
     <!-- Calculator Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-      <!-- Dimension Controls (7 cols) -->
-      <section class="lg:col-span-7 space-y-6">
+      <!-- Left Column: Either Sliders OR Questionnaire (7 cols) -->
+      <div class="lg:col-span-7 space-y-6">
 
-        <!-- Dimension 1: Sangat -->
-        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/70 space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <!-- MODE A: DIRECT SLIDER CONTROLS -->
+        <section id="panel-sliders" class="space-y-6">
+          <!-- Dimension 1: Sangat -->
+          <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/70 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs uppercase tracking-wider text-amber-400 font-semibold">Dimension 1</span>
+                <h3 class="font-bold text-base text-white">Sangat Governance Parity (S_gov)</h3>
+              </div>
+              <span id="score-sgov" class="text-sm font-mono font-bold text-amber-300 bg-slate-800 px-2 py-0.5 rounded">0.60</span>
+            </div>
+            <p class="text-xs text-slate-400">Reflects Guru Nanak's assembly model (<em>Sangat</em>): co-equal deliberative power and board leadership.</p>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <label for="slider-vd" class="text-slate-300 font-medium">Deliberative Voice & Consensus Rights (V_d)</label>
+                <span id="val-vd" class="font-mono text-amber-400">0.60</span>
+              </div>
+              <input id="slider-vd" type="range" min="0" max="1" step="0.01" value="0.60" oninput="calculateSPPI()" class="w-full">
+              <p class="text-[11px] text-slate-500">Protection of minority dissent and veto parity in decision assemblies.</p>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <label for="slider-lp" class="text-slate-300 font-medium">Governing Board & Strategic Representation (L_p)</label>
+                <span id="val-lp" class="font-mono text-amber-400">0.60</span>
+              </div>
+              <input id="slider-lp" type="range" min="0" max="1" step="0.01" value="0.60" oninput="calculateSPPI()" class="w-full">
+              <p class="text-[11px] text-slate-500">Female proportion in trustee, director, and senior leadership levels.</p>
+            </div>
+          </div>
+
+          <!-- Dimension 2: Pangat -->
+          <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/70 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs uppercase tracking-wider text-amber-400 font-semibold">Dimension 2</span>
+                <h3 class="font-bold text-base text-white">Pangat Distributive Equity (P_dist)</h3>
+              </div>
+              <span id="score-pdist" class="text-sm font-mono font-bold text-amber-300 bg-slate-800 px-2 py-0.5 rounded">0.55</span>
+            </div>
+            <p class="text-xs text-slate-400">Rooted in <em>Pangat</em> (dining without hierarchy) & dismantling <em>Sutak</em> (ritual bodily taboos).</p>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <label for="slider-ca" class="text-slate-300 font-medium">Commons & STEM Infrastructure Access (C_a)</label>
+                <span id="val-ca" class="font-mono text-amber-400">0.55</span>
+              </div>
+              <input id="slider-ca" type="range" min="0" max="1" step="0.01" value="0.55" oninput="calculateSPPI()" class="w-full">
+              <p class="text-[11px] text-slate-500">Equitable hardware, labs, compute credits, and algorithm design pipelines.</p>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <label for="slider-wb" class="text-slate-300 font-medium">Bodily Equity & Sutak Taboo De-stigmatization (W_b)</label>
+                <span id="val-wb" class="font-mono text-amber-400">0.55</span>
+              </div>
+              <input id="slider-wb" type="range" min="0" max="1" step="0.01" value="0.55" oninput="calculateSPPI()" class="w-full">
+              <p class="text-[11px] text-slate-500">Menstrual sanitation amenities, reproductive safety, and anti-harassment enforcement.</p>
+            </div>
+          </div>
+
+          <!-- Dimension 3: Kirat -->
+          <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/70 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs uppercase tracking-wider text-amber-400 font-semibold">Dimension 3</span>
+                <h3 class="font-bold text-base text-white">Kirat-Vand Economic Autonomy (K_econ)</h3>
+              </div>
+              <span id="score-kecon" class="text-sm font-mono font-bold text-amber-300 bg-slate-800 px-2 py-0.5 rounded">0.50</span>
+            </div>
+            <p class="text-xs text-slate-400">Honest labor (<em>Kirat</em>) and mutual capital sharing (<em>Vand Chhako</em>).</p>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <label for="slider-ap" class="text-slate-300 font-medium">Asset Entitlement & Capital Parity (A_p)</label>
+                <span id="val-ap" class="font-mono text-amber-400">0.50</span>
+              </div>
+              <input id="slider-ap" type="range" min="0" max="1" step="0.01" value="0.50" oninput="calculateSPPI()" class="w-full">
+              <p class="text-[11px] text-slate-500">Direct equity ownership, patent holding, and transparent compensation parity.</p>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <label for="slider-uc" class="text-slate-300 font-medium">Unpaid Care Labor Valuation (U_c)</label>
+                <span id="val-uc" class="font-mono text-amber-400">0.50</span>
+              </div>
+              <input id="slider-uc" type="range" min="0" max="1" step="0.01" value="0.50" oninput="calculateSPPI()" class="w-full">
+              <p class="text-[11px] text-slate-500">Formal accommodation for domestic stewardship and parental leave credits.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- MODE B: STRUCTURED AUDIT QUESTIONNAIRE -->
+        <section id="panel-quiz" class="hidden space-y-6">
+          <div class="p-4 rounded-xl border border-amber-700/40 bg-amber-950/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <span class="text-xs uppercase tracking-wider text-amber-400 font-semibold">Dimension 1</span>
-              <h3 class="font-bold text-base text-white">Sangat Governance Parity (S_gov)</h3>
+              <h3 class="text-sm font-bold text-amber-200">18-Point Institutional Audit Questionnaire</h3>
+              <p class="text-xs text-slate-300">Rate each question from <strong>0.00 (Absent)</strong> to <strong>1.00 (Sangat Equilibrium)</strong>. Sub-indicator scores update live.</p>
             </div>
-            <span id="score-sgov" class="text-sm font-mono font-bold text-amber-300 bg-slate-800 px-2 py-0.5 rounded">0.60</span>
+            <button onclick="resetQuizScores(0.50)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 border border-slate-700 shrink-0">
+              Reset All to 0.50
+            </button>
           </div>
-          <p class="text-xs text-slate-400">Reflects Guru Nanak's assembly model (<em>Sangat</em>): co-equal deliberative power and board leadership.</p>
+          <div id="quiz-container" class="space-y-6"></div>
+        </section>
 
-          <div class="space-y-1.5">
-            <div class="flex justify-between text-xs">
-              <label for="slider-vd" class="text-slate-300 font-medium">Deliberative Voice & Consensus Rights (V_d)</label>
-              <span id="val-vd" class="font-mono text-amber-400">0.60</span>
-            </div>
-            <input id="slider-vd" type="range" min="0" max="1" step="0.05" value="0.60" oninput="calculateSPPI()" class="w-full">
-            <p class="text-[11px] text-slate-500">Protection of minority dissent and veto parity in decision assemblies.</p>
-          </div>
+      </div>
 
-          <div class="space-y-1.5">
-            <div class="flex justify-between text-xs">
-              <label for="slider-lp" class="text-slate-300 font-medium">Governing Board & Strategic Representation (L_p)</label>
-              <span id="val-lp" class="font-mono text-amber-400">0.60</span>
-            </div>
-            <input id="slider-lp" type="range" min="0" max="1" step="0.05" value="0.60" oninput="calculateSPPI()" class="w-full">
-            <p class="text-[11px] text-slate-500">Female proportion in trustee, director, and senior leadership positions.</p>
-          </div>
-        </div>
-
-        <!-- Dimension 2: Pangat -->
-        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/70 space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-            <div>
-              <span class="text-xs uppercase tracking-wider text-amber-400 font-semibold">Dimension 2</span>
-              <h3 class="font-bold text-base text-white">Pangat Distributive Equity (P_dist)</h3>
-            </div>
-            <span id="score-pdist" class="text-sm font-mono font-bold text-amber-300 bg-slate-800 px-2 py-0.5 rounded">0.55</span>
-          </div>
-          <p class="text-xs text-slate-400">Rooted in <em>Pangat</em> (dining without hierarchy) & dismantling <em>Sutak</em> (ritual bodily taboos).</p>
-
-          <div class="space-y-1.5">
-            <div class="flex justify-between text-xs">
-              <label for="slider-ca" class="text-slate-300 font-medium">Commons & STEM Infrastructure Access (C_a)</label>
-              <span id="val-ca" class="font-mono text-amber-400">0.55</span>
-            </div>
-            <input id="slider-ca" type="range" min="0" max="1" step="0.05" value="0.55" oninput="calculateSPPI()" class="w-full">
-            <p class="text-[11px] text-slate-500">Equitable hardware, labs, compute credits, and algorithm design pipelines.</p>
-          </div>
-
-          <div class="space-y-1.5">
-            <div class="flex justify-between text-xs">
-              <label for="slider-wb" class="text-slate-300 font-medium">Bodily Equity & Sutak Taboo De-stigmatization (W_b)</label>
-              <span id="val-wb" class="font-mono text-amber-400">0.55</span>
-            </div>
-            <input id="slider-wb" type="range" min="0" max="1" step="0.05" value="0.55" oninput="calculateSPPI()" class="w-full">
-            <p class="text-[11px] text-slate-500">Menstrual sanitation amenities, reproductive safety, and anti-harassment enforcement.</p>
-          </div>
-        </div>
-
-        <!-- Dimension 3: Kirat -->
-        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/70 space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-            <div>
-              <span class="text-xs uppercase tracking-wider text-amber-400 font-semibold">Dimension 3</span>
-              <h3 class="font-bold text-base text-white">Kirat-Vand Economic Autonomy (K_econ)</h3>
-            </div>
-            <span id="score-kecon" class="text-sm font-mono font-bold text-amber-300 bg-slate-800 px-2 py-0.5 rounded">0.50</span>
-          </div>
-          <p class="text-xs text-slate-400">Honest productive labor (<em>Kirat</em>) and mutual capital sharing (<em>Vand Chhako</em>).</p>
-
-          <div class="space-y-1.5">
-            <div class="flex justify-between text-xs">
-              <label for="slider-ap" class="text-slate-300 font-medium">Asset Entitlement & Capital Parity (A_p)</label>
-              <span id="val-ap" class="font-mono text-amber-400">0.50</span>
-            </div>
-            <input id="slider-ap" type="range" min="0" max="1" step="0.05" value="0.50" oninput="calculateSPPI()" class="w-full">
-            <p class="text-[11px] text-slate-500">Direct equity ownership, patent holding, and transparent compensation parity.</p>
-          </div>
-
-          <div class="space-y-1.5">
-            <div class="flex justify-between text-xs">
-              <label for="slider-uc" class="text-slate-300 font-medium">Unpaid Care Labor Valuation (U_c)</label>
-              <span id="val-uc" class="font-mono text-amber-400">0.50</span>
-            </div>
-            <input id="slider-uc" type="range" min="0" max="1" step="0.05" value="0.50" oninput="calculateSPPI()" class="w-full">
-            <p class="text-[11px] text-slate-500">Formal accommodation for domestic stewardship and parental leave credits.</p>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- Score Output Card (5 cols) -->
+      <!-- Score Output Card & Analysis (5 cols) -->
       <aside class="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
 
+        <!-- Score Box -->
         <div class="p-6 rounded-2xl border border-amber-900/40 bg-gradient-to-b from-slate-900 to-slate-950 shadow-2xl space-y-5">
           <div class="text-center space-y-1">
             <span class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Composite Parity Metric</span>
@@ -160,7 +201,7 @@
             </div>
           </div>
 
-          <!-- Progress Bars -->
+          <!-- Dimensional Progress Bars -->
           <div class="space-y-3 pt-3 border-t border-slate-800">
             <div class="space-y-1">
               <div class="flex justify-between text-xs">
@@ -193,10 +234,28 @@
             </div>
           </div>
 
+          <!-- Sub-indicator Mini Summary -->
+          <div class="grid grid-cols-3 gap-2 pt-2 border-t border-slate-800 text-center text-[11px]">
+            <div class="bg-slate-900/90 p-2 rounded-lg border border-slate-800">
+              <span class="text-slate-400 block">V_d / L_p</span>
+              <span id="mini-sgov" class="font-mono text-amber-300 font-semibold">0.60 / 0.60</span>
+            </div>
+            <div class="bg-slate-900/90 p-2 rounded-lg border border-slate-800">
+              <span class="text-slate-400 block">C_a / W_b</span>
+              <span id="mini-pdist" class="font-mono text-amber-300 font-semibold">0.55 / 0.55</span>
+            </div>
+            <div class="bg-slate-900/90 p-2 rounded-lg border border-slate-800">
+              <span class="text-slate-400 block">A_p / U_c</span>
+              <span id="mini-kecon" class="font-mono text-amber-300 font-semibold">0.50 / 0.50</span>
+            </div>
+          </div>
+
+          <!-- Interpretation text -->
           <div id="tier-desc" class="p-3.5 bg-slate-900 border border-slate-800 rounded-xl text-xs text-slate-300 leading-relaxed">
             The institution has institutionalized formal compliance mechanisms, but systemic friction remains in capital allocation and deliberative authority.
           </div>
 
+          <!-- Actions -->
           <div class="pt-2 space-y-2">
             <button onclick="copyCitationSnippet()" class="w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
@@ -210,6 +269,7 @@
           <div id="toast" class="text-center text-xs font-semibold text-amber-400 h-4 opacity-0 transition-opacity"></div>
         </div>
 
+        <!-- Academic Gurbani Epigraph Reference -->
         <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/50 text-xs space-y-2">
           <span class="text-amber-400 font-semibold block">Canonical Reference:</span>
           <p class="italic text-slate-300">"ਸੋ ਕਿਉ ਮੰਦਾ ਆਖੀਐ ਜਿਤੁ ਜੰਮਹਿ ਰਾਜਾਨ ॥"<br>
@@ -265,11 +325,235 @@
   </main>
 
   <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
-    <p>Sangat Parity Index (SPPI) by Dr.K.Umadevi &bull; Designed for Guru Shiksha 11th Edition Competition Paper</p>
+    <p>Sangat-Pangat Parity Index (SPPI) &bull; Designed for Guru Shiksha 11th Edition Competition Paper</p>
     <p class="mt-1">Open Research Artifact &bull; CC-BY 4.0 International</p>
   </footer>
 
   <script>
+    const QUESTION_BANK = {
+      edu: [
+        {
+          dim: "Dimension 1: Sangat Governance Parity (S_gov)",
+          subCode: "vd",
+          subTitle: "1.1 Deliberative Voice & Consensus Rights (V_d)",
+          questions: [
+            { q: "Do female faculty members and student representatives hold formal voting rights and agenda-setting authority in the Academic Council, Board of Studies, and IQAC?", ev: "Committee charters, meeting minutes" },
+            { q: "Are dissent notes or policy proposals raised by women in departmental meetings formally recorded and acted upon with equal frequency?", ev: "Departmental review logs, climate survey" },
+            { q: "Do female students have equal representation and independent budgetary control in elected student unions and technical/cultural committees?", ev: "Student council bylaws, budget records" }
+          ]
+        },
+        {
+          dim: "Dimension 1: Sangat Governance Parity (S_gov)",
+          subCode: "lp",
+          subTitle: "1.2 Governing Board & Strategic Representation (L_p)",
+          questions: [
+            { q: "What proportion of statutory leadership positions (Vice-Chancellor/Principal, Deans, HoDs, Governing Trust members) are occupied by women?", ev: "Leadership directory, NIRF/NAAC SSR" },
+            { q: "Are women represented equitably on high-stakes statutory committees (Finance, Recruitment, Infrastructure, Disciplinary), beyond welfare panels?", ev: "Committee roster breakdown by gender" },
+            { q: "Does the institution enforce gender-balanced search committees and blind CV shortlisting for senior academic appointments?", ev: "Recruitment SOPs, selection records" }
+          ]
+        },
+        {
+          dim: "Dimension 2: Pangat Distributive Equity (P_dist)",
+          subCode: "ca",
+          subTitle: "2.1 Commons & STEM Infrastructure Access (C_a)",
+          questions: [
+            { q: "Do female students and researchers enjoy identical 24/7 access to central libraries, robotics/engineering workshops, and computing labs without restrictive curfews?", ev: "Campus access logs, hostel rulebooks" },
+            { q: "What share of institutional seed-research grants, lab space allocations, and PhD fellowships in STEM departments are awarded to female PIs?", ev: "R&D grant ledger, fellowship data" },
+            { q: "Are AI/ML curricula and student capstone datasets audited for gender bias, with targeted mentorship to retain women in core STEM tracks?", ev: "Syllabi, STEM retention ratios" }
+          ]
+        },
+        {
+          dim: "Dimension 2: Pangat Distributive Equity (P_dist)",
+          subCode: "wb",
+          subTitle: "2.2 Bodily Dignity & Sutak De-stigmatization (W_b)",
+          questions: [
+            { q: "Are clean, well-maintained washrooms, free sanitary napkin dispensers, and disposal units available across every academic, lab, and hostel block?", ev: "Campus infrastructure audit" },
+            { q: "Does the institution provide menstrual or reproductive health leave/attendance relaxation so students and faculty are not penalized academically?", ev: "Academic attendance & leave rules" },
+            { q: "Is the Internal Complaints Committee (ICC) under the POSH Act independently constituted, visible, and proven to resolve complaints transparently?", ev: "Annual POSH compliance report" }
+          ]
+        },
+        {
+          dim: "Dimension 3: Kirat-Vand Economic Autonomy (K_econ)",
+          subCode: "ap",
+          subTitle: "3.1 Asset Entitlement & Capital Parity (A_p)",
+          questions: [
+            { q: "What proportion of institutional patents, copyright filings, and tech-transfer royalties list female faculty or students as primary inventors?", ev: "IP cell registry, royalty ledger" },
+            { q: "What percentage of campus incubation center seed funding, startup equity, and entrepreneurship grants are allocated to women-led ventures?", ev: "Incubation portfolio & cap tables" },
+            { q: "Is there verified pay parity across identical faculty cadres and administrative staff, with transparent Career Advancement Scheme (CAS) criteria?", ev: "Payroll audit, HR compensation bands" }
+          ]
+        },
+        {
+          dim: "Dimension 3: Kirat-Vand Economic Autonomy (K_econ)",
+          subCode: "uc",
+          subTitle: "3.2 Unpaid Care Labor Valuation (U_c)",
+          questions: [
+            { q: "Does the campus operate an affordable, accessible on-campus crèche/daycare facility for children of faculty, staff, and research scholars?", ev: "Campus welfare directory" },
+            { q: "Are tenure-track windows, CAS promotion clocks, and PhD submission deadlines automatically extended following parental or elder-care leave?", ev: "University service & PhD regulations" },
+            { q: "Are timetable scheduling policies designed to accommodate caregiving responsibilities (e.g., avoiding mandatory late-evening meetings)?", ev: "Departmental scheduling guidelines" }
+          ]
+        }
+      ],
+      org: [
+        {
+          dim: "Dimension 1: Sangat Governance Parity (S_gov)",
+          subCode: "vd",
+          subTitle: "1.1 Deliberative Voice & Consensus Rights (V_d)",
+          questions: [
+            { q: "In executive and cross-functional meetings, are structured turn-taking or blind-proposal mechanisms used to prevent informal male vetoes?", ev: "Governance SOPs, 360-degree feedback" },
+            { q: "Do employee resource groups (ERGs) or women’s councils have direct escalation pathways to the Board of Directors with binding response timelines?", ev: "Board escalation logs, HR policy" },
+            { q: "Are major organizational restructurings, M&A decisions, and policy changes subjected to mandatory gender-impact consultations before sign-off?", ev: "Policy sign-off checklists" }
+          ]
+        },
+        {
+          dim: "Dimension 1: Sangat Governance Parity (S_gov)",
+          subCode: "lp",
+          subTitle: "1.2 Governing Board & Strategic Representation (L_p)",
+          questions: [
+            { q: "What percentage of C-suite roles (CEO, CFO, CTO, COO) and voting seats on the Board of Directors are held by women?", ev: "Annual report, governance filings" },
+            { q: "Do women lead revenue-generating Profit & Loss (P&L) business units and core engineering/product divisions, beyond support functions (HR, CSR)?", ev: "Org chart, P&L ownership matrix" },
+            { q: "Are succession pipelines for Vice President and Director roles audited annually to eliminate mid-career attrition ('leaky pipeline')?", ev: "Talent review & promotion metrics" }
+          ]
+        },
+        {
+          dim: "Dimension 2: Pangat Distributive Equity (P_dist)",
+          subCode: "ca",
+          subTitle: "2.1 Commons & STEM Infrastructure Access (C_a)",
+          questions: [
+            { q: "Do female engineers, analysts, and researchers receive equal allocation of cloud compute credits, R&D budgets, and high-visibility projects?", ev: "IT/R&D resource logs, staffing data" },
+            { q: "Does the organization conduct mandatory algorithmic fairness audits on internal AI tools (resume screeners, rating models, credit algorithms)?", ev: "Model audit reports, AI ethics docs" },
+            { q: "Is technical upskilling (AI, cloud architecture, executive bootcamps) funded and utilized at equal rates across genders?", ev: "L&D participation & budget records" }
+          ]
+        },
+        {
+          dim: "Dimension 2: Pangat Distributive Equity (P_dist)",
+          subCode: "wb",
+          subTitle: "2.2 Bodily Dignity & Sutak De-stigmatization (W_b)",
+          questions: [
+            { q: "Do all offices, manufacturing plants, and field sites provide dedicated lactation rooms, women-tailored safety gear, and hygienic sanitation?", ev: "Facility checklists, EHS reports" },
+            { q: "Does corporate health insurance cover comprehensive reproductive, maternal, and mental healthcare without discriminatory exclusions?", ev: "Group health insurance schedule" },
+            { q: "Are anonymous reporting channels and zero-tolerance anti-harassment enforcement actively audited across physical and remote workspaces?", ev: "HR compliance logs, safety survey" }
+          ]
+        },
+        {
+          dim: "Dimension 3: Kirat-Vand Economic Autonomy (K_econ)",
+          subCode: "ap",
+          subTitle: "3.1 Asset Entitlement & Capital Parity (A_p)",
+          questions: [
+            { q: "Does an annual third-party pay-equity audit confirm zero unexplained gender wage gap across identical job grades, ratings, and tenure?", ev: "Annual pay-equity audit report" },
+            { q: "Do women hold an equitable share of Employee Stock Ownership Plans (ESOPs), performance bonuses, and profit-sharing pools?", ev: "Compensation & equity ledger" },
+            { q: "In procurement and supply-chain management, what percentage of vendor contracts and enterprise credit lines go to women-owned businesses?", ev: "Supplier diversity records" }
+          ]
+        },
+        {
+          dim: "Dimension 3: Kirat-Vand Economic Autonomy (K_econ)",
+          subCode: "uc",
+          subTitle: "3.2 Unpaid Care Labor Valuation (U_c)",
+          questions: [
+            { q: "Does the organization offer paid parental leave for both primary and secondary caregivers, paired with a structured 'returnship' program?", ev: "HR leave policy, return retention rate" },
+            { q: "Are performance appraisals calibrated to evaluate output rather than physical 'presenteeism,' protecting remote or flexible staff?", ev: "Appraisal rubrics, promotion audits" },
+            { q: "Does the organization provide dependent-care stipends, backup childcare/eldercare support, or emergency care leave?", ev: "Employee benefits handbook" }
+          ]
+        }
+      ]
+    };
+
+    let currentMode = 'slider';
+
+    function setMode(mode) {
+      currentMode = mode;
+      const btnSlider = document.getElementById('btn-mode-slider');
+      const btnQuiz = document.getElementById('btn-mode-quiz');
+      const panelSliders = document.getElementById('panel-sliders');
+      const panelQuiz = document.getElementById('panel-quiz');
+      const sectorBox = document.getElementById('sector-selector-box');
+
+      if (mode === 'slider') {
+        btnSlider.className = "px-4 py-2.5 rounded-lg text-xs font-semibold bg-amber-600 text-white shadow transition";
+        btnQuiz.className = "px-4 py-2.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
+        panelSliders.classList.remove('hidden');
+        panelQuiz.classList.add('hidden');
+        sectorBox.classList.add('hidden');
+      } else {
+        btnQuiz.className = "px-4 py-2.5 rounded-lg text-xs font-semibold bg-amber-600 text-white shadow transition";
+        btnSlider.className = "px-4 py-2.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
+        panelSliders.classList.add('hidden');
+        panelQuiz.classList.remove('hidden');
+        sectorBox.classList.remove('hidden');
+        renderQuiz();
+      }
+    }
+
+    function renderQuiz() {
+      const sector = document.getElementById('sector-select').value;
+      const container = document.getElementById('quiz-container');
+      const groups = QUESTION_BANK[sector];
+
+      let html = '';
+      groups.forEach((group, gIdx) => {
+        const currentSubVal = parseFloat(document.getElementById('slider-' + group.subCode).value).toFixed(2);
+        html += `
+          <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/70 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-amber-400 font-semibold">${group.dim}</span>
+                <h4 class="font-bold text-sm text-white">${group.subTitle}</h4>
+              </div>
+              <span id="quiz-sub-badge-${group.subCode}" class="text-xs font-mono font-bold text-amber-300 bg-slate-800 px-2.5 py-1 rounded">Avg: ${currentSubVal}</span>
+            </div>
+            <div class="space-y-4">
+        `;
+
+        group.questions.forEach((item, qIdx) => {
+          const defaultVal = parseFloat(document.getElementById('slider-' + group.subCode).value);
+          // Snap default to nearest 0.25
+          const snapped = (Math.round(defaultVal * 4) / 4).toFixed(2);
+          html += `
+            <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800/80 space-y-2.5">
+              <p class="text-xs text-slate-200 leading-relaxed"><span class="text-amber-400 font-bold mr-1">Q${gIdx * 3 + qIdx + 1}.</span> ${item.q}</p>
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-1">
+                <span class="text-[11px] text-slate-500">Evidence: ${item.ev}</span>
+                <select data-sub="${group.subCode}" onchange="recalculateFromQuiz()" class="quiz-answer bg-slate-900 border border-slate-700 rounded-md px-2.5 py-1.5 text-xs text-amber-200 font-mono focus:outline-none focus:border-amber-500">
+                  <option value="0.00" ${snapped === "0.00" ? "selected" : ""}>0.00 — Absent / Excluded</option>
+                  <option value="0.25" ${snapped === "0.25" ? "selected" : ""}>0.25 — Tokenistic</option>
+                  <option value="0.50" ${snapped === "0.50" ? "selected" : ""}>0.50 — Transitional</option>
+                  <option value="0.75" ${snapped === "0.75" ? "selected" : ""}>0.75 — Substantive</option>
+                  <option value="1.00" ${snapped === "1.00" ? "selected" : ""}>1.00 — Sangat Equilibrium</option>
+                </select>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `</div></div>`;
+      });
+
+      container.innerHTML = html;
+      recalculateFromQuiz();
+    }
+
+    function recalculateFromQuiz() {
+      const codes = ['vd', 'lp', 'ca', 'wb', 'ap', 'uc'];
+      codes.forEach(code => {
+        const selects = document.querySelectorAll(`.quiz-answer[data-sub="${code}"]`);
+        if (selects.length > 0) {
+          let sum = 0;
+          selects.forEach(sel => { sum += parseFloat(sel.value); });
+          const avg = sum / selects.length;
+          document.getElementById('slider-' + code).value = avg.toFixed(2);
+          const badge = document.getElementById('quiz-sub-badge-' + code);
+          if (badge) badge.innerText = 'Avg: ' + avg.toFixed(2);
+        }
+      });
+      calculateSPPI();
+    }
+
+    function resetQuizScores(val) {
+      document.querySelectorAll('.quiz-answer').forEach(sel => {
+        sel.value = val.toFixed(2);
+      });
+      recalculateFromQuiz();
+    }
+
     function calculateSPPI() {
       const vd = parseFloat(document.getElementById('slider-vd').value);
       const lp = parseFloat(document.getElementById('slider-lp').value);
@@ -284,6 +568,10 @@
       document.getElementById('val-wb').innerText = wb.toFixed(2);
       document.getElementById('val-ap').innerText = ap.toFixed(2);
       document.getElementById('val-uc').innerText = uc.toFixed(2);
+
+      document.getElementById('mini-sgov').innerText = `${vd.toFixed(2)} / ${lp.toFixed(2)}`;
+      document.getElementById('mini-pdist').innerText = `${ca.toFixed(2)} / ${wb.toFixed(2)}`;
+      document.getElementById('mini-kecon').innerText = `${ap.toFixed(2)} / ${uc.toFixed(2)}`;
 
       const sgov = (vd + lp) / 2;
       const pdist = (ca + wb) / 2;
@@ -323,14 +611,20 @@
     }
 
     function applyPreset(name) {
-      if (name === 'academic') {
-        setValues(0.65, 0.45, 0.70, 0.60, 0.40, 0.50);
+      if (name === 'patriarchal') {
+        setValues(0.25, 0.25, 0.25, 0.25, 0.00, 0.25);
+      } else if (name === 'academic') {
+        setValues(0.75, 0.50, 0.75, 0.50, 0.50, 0.50);
       } else if (name === 'corporate') {
-        setValues(0.50, 0.35, 0.60, 0.55, 0.45, 0.30);
+        setValues(0.50, 0.25, 0.50, 0.50, 0.50, 0.25);
       } else if (name === 'sangat') {
-        setValues(0.95, 0.90, 0.95, 0.95, 0.90, 0.90);
+        setValues(1.00, 1.00, 1.00, 1.00, 1.00, 1.00);
       }
-      calculateSPPI();
+      if (currentMode === 'quiz') {
+        renderQuiz();
+      } else {
+        calculateSPPI();
+      }
     }
 
     function setValues(vd, lp, ca, wb, ap, uc) {
@@ -355,8 +649,11 @@
       const sgov = document.getElementById('score-sgov').innerText;
       const pdist = document.getElementById('score-pdist').innerText;
       const kecon = document.getElementById('score-kecon').innerText;
+      const modeLabel = currentMode === 'quiz'
+        ? `Audit Questionnaire (${document.getElementById('sector-select').options[document.getElementById('sector-select').selectedIndex].text})`
+        : 'Direct Sub-Indicator Calibration';
 
-      const text = `Diagnostic Evaluation (SPPI Metric):\nComposite Sangat Pangat Parity Index: ${spi} (${tier})\n- Sangat Governance Parity (S_gov): ${sgov}\n- Pangat Distributive Equity (P_dist): ${pdist}\n- Kirat-Vand Economic Autonomy (K_econ): ${kecon}\nFramework: Operationalized from Guru Nanak's egalitarian philosophy (Guru Granth Sahib, Ang 472-473).`;
+      const text = `Diagnostic Evaluation (SPPI Metric - ${modeLabel}):\nComposite Sangat-Pangat Parity Index: ${sppi} (${tier})\n- Sangat Governance Parity (S_gov): ${sgov}\n- Pangat Distributive Equity (P_dist): ${pdist}\n- Kirat-Vand Economic Autonomy (K_econ): ${kecon}\nFramework: Operationalized from Guru Nanak's egalitarian philosophy (Guru Granth Sahib, Ang 472-473).`;
 
       navigator.clipboard.writeText(text).then(() => {
         showToast("Copied diagnostic score to clipboard!");
@@ -365,11 +662,11 @@
 
     function copyBibtexCitation() {
       const bibtex = `@misc{sppi2026,
-  author = {Dr.K.Umadevi, Guru Nanak College},
-  title = {Sangat Pangat Parity Index (SPPI): An Operational Metric for Institutional Gender Equity Inspired by Guru Nanak's Philosophy},
+  author = {Research Submission, Guru Shiksha},
+  title = {Sangat-Pangat Parity Index (SPPI): An Operational Metric for Institutional Gender Equity Inspired by Guru Nanak's Philosophy},
   year = {2026},
   howpublished = {Interactive Research Artifact on GitHub Pages},
-  note = {Version 1.0}
+  note = {Version 2.0 - Dual Mode (Direct & Questionnaire Audit)}
 }`;
       navigator.clipboard.writeText(bibtex).then(() => {
         showToast("Copied BibTeX citation to clipboard!");
