@@ -1,4 +1,4 @@
-# Sangat Parity Index (SPI)
+# Sangat Pangat Parity Index (SPPI)
 [![Research Paper](https://img.shields.io/badge/Research%20Paper-Guru%20Shiksha%2011th%20Edition-1e3a8a?style=for-the-badge&logo=googlescholar&logoColor=white)](#)
 [![Live Interactive Tool](https://img.shields.io/badge/Live%20Interactive%20Tool-GitHub%20Pages-d97706?style=for-the-badge&logo=github&logoColor=white)](https://umadevignc.github.io/SangatParityIndex/)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
